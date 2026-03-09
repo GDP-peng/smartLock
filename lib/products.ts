@@ -286,9 +286,9 @@ export const products: Product[] = [
     price: 1380,
     images: ["/images/products/Mate10/1.png", "/images/products/Mate10/2.png"],
     detailImages: [
-      "/images/products/Mate10/1.jpg",
-      "/images/products/Mate10/2.jpg",
-      "/images/products/Mate10/3.jpg",
+      "/images/products/Mate10/1.png",
+      "/images/products/Mate10/2.png",
+      "/images/products/Mate10/3.png",
       "/images/products/Mate10/4.jpg",
       "/images/products/Mate10/5.jpg",
       "/images/products/Mate10/6.jpg",
@@ -297,7 +297,6 @@ export const products: Product[] = [
       "/images/products/Mate10/9.jpg",
       "/images/products/Mate10/10.jpg",
       "/images/products/Mate10/11.jpg",
-      "/images/products/Mate10/12.jpg",
     ],
     specifications: [
       {
@@ -375,7 +374,7 @@ export const products: Product[] = [
     series: "经典系列",
     tagline: "3D 人脸识别 AI 智能锁 双色可选",
     price: 1480,
-    images: ["/images/products/Mate20/黑 1.png", "/images/products/Mate20/金 1.png", "/images/products/Mate20/黑 2.png"],
+    images: ["/images/products/Mate20/hei1.png", "/images/products/Mate20/jin1.png", "/images/products/Mate20/hei2.png"],
     detailImages: [
       "/images/products/Mate20/1.jpg",
       "/images/products/Mate20/2.jpg",

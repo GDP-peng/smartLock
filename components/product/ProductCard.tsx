@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import { useState } from "react"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
@@ -15,22 +16,30 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product, index = 0 }: ProductCardProps) {
+  const [isImageLoaded, setIsImageLoaded] = useState(false)
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: Math.min(index * 0.1, 0.5) }}
     >
       <Link href={`/products/${product.slug}`}>
         <Card className="group overflow-hidden border-border bg-card hover:border-primary/50 transition-all duration-300 h-full">
-          <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-secondary/50 to-secondary">
+          <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-secondary/80 to-secondary/50">
+            {!isImageLoaded && (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-16 h-16 border-4 border-primary/30 border-t-primary rounded-full animate-spin" />
+              </div>
+            )}
             <Image
               src={product.images[0]}
               alt={product.name}
               fill
-              className="object-cover group-hover:scale-105 transition-transform duration-500"
+              className={`object-cover group-hover:scale-105 transition-transform duration-500 ${isImageLoaded ? 'opacity-100' : 'opacity-0'}`}
               priority={index < 3}
+              onLoad={() => setIsImageLoaded(true)}
+              onError={() => setIsImageLoaded(true)}
             />
 
             {/* Badges */}

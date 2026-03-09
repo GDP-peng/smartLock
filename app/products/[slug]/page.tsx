@@ -3,7 +3,6 @@ import { getProductBySlug } from "@/lib/products"
 import { ProductGallery } from "@/components/product/ProductGallery"
 import { ProductSpecs } from "@/components/product/ProductSpecs"
 import { ProductFeatures } from "@/components/product/ProductFeatures"
-import { ProductVideo } from "@/components/product/ProductVideo"
 import { ProductDetailImages } from "@/components/product/ProductDetailImages"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -56,10 +55,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Left Column - Gallery & Video */}
-          <div className="space-y-8">
-            <ProductGallery images={product.images} productName={product.name} />
-            {product.video && <ProductVideo video={product.video} productName={product.name} />}
+          {/* Left Column - Gallery (includes video if available) */}
+          <div>
+            <ProductGallery images={product.images} productName={product.name} video={product.video} />
           </div>
 
           {/* Right Column - Info & CTA */}

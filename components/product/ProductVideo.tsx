@@ -1,10 +1,9 @@
 "use client"
 
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { motion } from "framer-motion"
 import { Play } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
 
 interface ProductVideoProps {
   video?: string
@@ -13,15 +12,27 @@ interface ProductVideoProps {
 
 export function ProductVideo({ video, productName }: ProductVideoProps) {
   const [isPlaying, setIsPlaying] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
 
   if (!video) {
     return null
   }
 
+  const handlePlay = () => {
+    setIsPlaying(true)
+    // 视频加载完成后自动播放
+    if (videoRef.current) {
+      videoRef.current.load()
+      videoRef.current.play().catch((err) => {
+        console.error("Video play error:", err)
+      })
+    }
+  }
+
   return (
     <div className="relative aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-secondary/50 to-secondary border border-border">
       {!isPlaying ? (
-        <div className="absolute inset-0 flex items-center justify-center">
+        <>
           {/* Thumbnail Placeholder */}
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-32 h-32 rounded-full gradient-gold/20 flex items-center justify-center">
@@ -30,29 +41,28 @@ export function ProductVideo({ video, productName }: ProductVideoProps) {
           </div>
 
           {/* Play Button */}
-          <motion.div
+          <motion.button
             initial={{ scale: 1 }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
+            onClick={handlePlay}
+            className="relative z-10 w-20 h-20 rounded-full gradient-gold text-black hover:opacity-90 flex items-center justify-center cursor-pointer border-none"
+            type="button"
+            aria-label="播放视频"
           >
-            <Button
-              size="lg"
-              className="w-20 h-20 rounded-full gradient-gold text-black hover:opacity-90"
-              onClick={() => setIsPlaying(true)}
-            >
-              <Play className="w-8 h-8 ml-1" />
-            </Button>
-          </motion.div>
-        </div>
+            <Play className="w-8 h-8 ml-1" />
+          </motion.button>
+        </>
       ) : (
         <div className="w-full h-full flex items-center justify-center bg-black">
           <video
+            ref={videoRef}
             className="w-full h-full object-contain"
-            src={video}
-            autoPlay
             controls
-            loop
+            autoPlay
+            playsInline
           >
+            <source src={video} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
