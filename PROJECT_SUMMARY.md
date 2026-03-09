@@ -279,5 +279,117 @@ vercel
 ---
 
 **文档生成时间**: 2026-03-09
-**项目版本**: 1.0.0
-**最后更新**: 初始版本完成
+**项目版本**: 1.1.0
+**最后更新**: 2026-03-10
+
+---
+
+## 开发日志 - 2026-03-10
+
+### 环境配置
+- ✅ 安装 Node.js 25.8.0（使用 Homebrew）
+- ✅ 安装项目依赖 `npm install`
+- ✅ 启动开发服务器 `npm run dev`（http://localhost:3000）
+
+### Bug 修复
+
+#### 1. Mate 10 产品详情页图片无法加载
+**问题**: `detailImages` 使用 `.jpg` 扩展名，但实际文件是 `.png`
+**修复**: 更新 `lib/products.ts` 中 Mate 10 的 `detailImages` 路径：
+```typescript
+// 修复前：1.jpg, 2.jpg, 3.jpg...
+// 修复后：1.png, 2.png, 3.png, 4.jpg, 5.jpg...
+```
+
+#### 2. Mate 20 首页图片和视频无法加载
+**问题 1**: 文件名包含中文（`黑 1.png`, `金 1.png`），Next.js 对中文文件名 URL 编码处理有问题
+**修复 1**: 重命名文件为拼音命名
+```bash
+黑 1.png → hei1.png
+黑 2.png → hei2.png
+黑 3.png → hei3.png
+金 1.png → jin1.png
+金 2.png → jin2.png
+金 3.png → jin3.png
+```
+**问题 2**: 视频文件不存在
+**修复 2**: 从 `smart_info/mate20/` 复制 `介绍视频.mp4` 到 `public/videos/mate20.mp4`
+
+#### 3. 产品中心黑屏 bug
+**问题**: 多次进出产品中心页面时概率性黑屏
+**原因**: `whileInView` 动画在快速导航时视图检测出错；图片加载失败时深色背景显示为黑色
+**修复**: 更新 `components/product/ProductCard.tsx`
+- 改用 `animate` 替代 `whileInView`
+- 添加图片加载状态管理
+- 添加 loading spinner
+- 添加 `onError` 处理
+
+#### 4. 产品视频播放问题
+**问题**: 点击播放按钮无反应
+**修复**: 更新 `components/product/ProductVideo.tsx`
+- 改用 `motion.button` 替代 `motion.div`
+- 添加 `videoRef` 手动控制播放
+- 添加 `<source>` 标签指定视频类型
+
+### 功能优化
+
+#### 产品图库视频集成
+**需求**: 视频单独展示太突兀，希望整合到图片画廊中
+**实现**: 重构 `components/product/ProductGallery.tsx`
+- 新增 `video` 参数支持
+- 构建统一媒体列表（图片 + 视频）
+- 视频在缩略图中显示为带"视频"标签的播放图标
+- 主显示区支持切换图片/视频
+- 添加左右箭头导航和计数器（如 4/4）
+- 视频结束时自动停止
+
+**文件变更**:
+- `components/product/ProductGallery.tsx` - 重构
+- `app/products/[slug]/page.tsx` - 移除独立 ProductVideo 组件
+- `components/product/ProductVideo.tsx` - 保留但不再使用
+
+### 部署配置
+
+#### Vercel 部署
+1. **安装 Vercel CLI**: `npm install -g vercel`
+2. **登录**: `vercel login`
+3. **添加配置**: 创建 `vercel.json`
+```json
+{
+  "framework": "nextjs"
+}
+```
+4. **部署命令**: `vercel --prod --yes`
+5. **生产链接**: https://rebekey.vercel.app
+
+#### Next.js 安全升级
+**问题**: Vercel 检测到 CVE-2025-66478 安全漏洞
+**修复**: 升级 Next.js 到最新版
+```bash
+npm install next@latest eslint-config-next@latest
+```
+
+#### GitHub 部署流程
+1. 推送代码到 GitHub: `git push origin main`
+2. 在 Vercel 官网导入 GitHub 仓库
+3. 自动触发构建部署
+
+### 当前状态
+- ✅ 开发服务器正常运行
+- ✅ 所有产品页面可正常访问
+- ✅ Mate 20 视频播放正常
+- ✅ 已部署到 Vercel（https://rebekey.vercel.app）
+- ✅ 代码已推送到 GitHub（https://github.com/GDP-peng/smartLock）
+
+### 文件变更清单
+| 文件 | 修改内容 |
+|------|----------|
+| `lib/products.ts` | 修复 Mate10/Mate20 图片路径，恢复 Mate20 视频配置 |
+| `components/product/ProductCard.tsx` | 添加图片加载状态，修复黑屏 bug |
+| `components/product/ProductGallery.tsx` | 重构支持视频集成 |
+| `components/product/ProductVideo.tsx` | 修复视频播放问题 |
+| `app/products/[slug]/page.tsx` | 移除独立视频组件 |
+| `public/images/products/Mate20/` | 重命名 PNG 文件为拼音 |
+| `public/videos/mate20.mp4` | 新增视频文件 |
+| `vercel.json` | 新增 Vercel 配置 |
+| `package.json` | 升级 Next.js 到安全版本 |
