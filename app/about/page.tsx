@@ -41,6 +41,7 @@ export default function AboutPage() {
     { name: t.aboutPage.team.design.name, role: t.aboutPage.team.design.role, image: "D" },
     { name: t.aboutPage.team.service.name, role: t.aboutPage.team.service.role, image: "S" },
   ]
+
   return (
     <div className="pt-20 md:pt-24 pb-20">
       {/* Hero */}
@@ -67,9 +68,8 @@ export default function AboutPage() {
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ delay: index * 0.1 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
               className="text-center"
             >
               <div className="text-4xl md:text-5xl font-bold text-gradient-gold mb-2">
@@ -100,9 +100,8 @@ export default function AboutPage() {
             <motion.div
               key={value.title}
               initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ delay: index * 0.1 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
             >
               <Card className="h-full border-border bg-card">
                 <CardContent className="p-6">
@@ -137,9 +136,8 @@ export default function AboutPage() {
             <motion.div
               key={member.name}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ delay: index * 0.1 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
               className="text-center"
             >
               <div className="aspect-square rounded-2xl bg-gradient-to-br from-secondary/50 to-secondary border border-border flex items-center justify-center mb-4">

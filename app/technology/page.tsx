@@ -49,6 +49,7 @@ export default function TechnologyPage() {
   ]
 
   const milestones = t.technologyPage.milestones.items
+
   return (
     <div className="pt-20 md:pt-24 pb-20">
       {/* Hero */}
@@ -77,8 +78,7 @@ export default function TechnologyPage() {
             <motion.div
               key={tech.title}
               initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <Card className="h-full border-border bg-card hover:border-primary/50 transition-colors">
@@ -121,8 +121,7 @@ export default function TechnologyPage() {
             <motion.div
               key={milestone.year}
               initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className={`relative flex items-center gap-8 mb-12 last:mb-0 ${
                 index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
