@@ -4,10 +4,13 @@ import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { useLanguage } from "@/lib/i18n/LanguageContext"
 
 const BUY_LINK = "https://qr.1688.com/s/bhc4cCvS"
 
 export function HeroSection() {
+  const { t } = useLanguage()
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Gradient */}
@@ -51,7 +54,7 @@ export function HeroSection() {
             transition={{ duration: 0.8 }}
           >
             <span className="inline-block px-4 py-2 rounded-full bg-secondary text-sm font-medium mb-6">
-              丽贝卡智能锁 · 守护家庭安全
+              {t.hero.badge}
             </span>
           </motion.div>
 
@@ -61,8 +64,8 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
           >
-            智能锁
-            <span className="block text-gradient-gold">选丽贝卡</span>
+            {t.hero.title1}
+            <span className="block text-gradient-gold">{t.hero.title2}</span>
           </motion.h1>
 
           <motion.p
@@ -71,9 +74,9 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10"
           >
-            3D 人脸识别 · 掌静脉解锁 · AI 智能语音 · 远程监控
+            {t.hero.features}
             <br />
-            为您的家庭提供全方位的安全守护
+            {t.hero.description}
           </motion.p>
 
           <motion.div
@@ -84,13 +87,13 @@ export function HeroSection() {
           >
             <a href={BUY_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex">
               <Button size="lg" className="gradient-gold text-black h-12 px-8 text-base">
-                立即购买
+                {t.hero.buyNow}
                 <ArrowRight className="ml-2" />
               </Button>
             </a>
             <Link href="/products">
               <Button size="lg" variant="outline" className="h-12 px-8 text-base">
-                查看产品
+                {t.hero.viewProducts}
               </Button>
             </Link>
           </motion.div>

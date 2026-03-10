@@ -8,21 +8,24 @@ import { motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-
-const navItems = [
-  { href: "/", label: "首页" },
-  { href: "/products", label: "产品中心" },
-  { href: "/technology", label: "技术亮点" },
-  { href: "/about", label: "关于我们" },
-  { href: "/contact", label: "联系我们" },
-]
+import { useLanguage } from "@/lib/i18n/LanguageContext"
+import { LanguageToggle } from "./LanguageToggle"
 
 const BUY_LINK = "https://qr.1688.com/s/bhc4cCvS"
 
 export function Header() {
   const pathname = usePathname()
+  const { t } = useLanguage()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
   const [isScrolled, setIsScrolled] = React.useState(false)
+
+  const navItems = [
+    { href: "/", label: t.nav.home },
+    { href: "/products", label: t.nav.products },
+    { href: "/technology", label: t.nav.technology },
+    { href: "/about", label: t.nav.about },
+    { href: "/contact", label: t.nav.contact },
+  ]
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -76,13 +79,15 @@ export function Header() {
                 )}
               </Link>
             ))}
+            <div className="w-px h-6 bg-border mx-2" />
+            <LanguageToggle />
           </nav>
 
           {/* CTA Button */}
           <div className="hidden md:block">
             <a href={BUY_LINK} target="_blank" rel="noopener noreferrer">
               <Button className="gradient-gold text-black hover:opacity-90">
-                立即购买
+                {t.common.buyNow}
               </Button>
             </a>
           </div>
@@ -123,9 +128,12 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
+            <div className="flex items-center gap-2 py-2">
+              <LanguageToggle />
+            </div>
             <a href={BUY_LINK} target="_blank" rel="noopener noreferrer" className="w-full">
               <Button className="gradient-gold text-black w-full">
-                立即购买
+                {t.common.buyNow}
               </Button>
             </a>
           </nav>

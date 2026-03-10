@@ -2,54 +2,57 @@
 
 import { motion } from "framer-motion"
 import { Shield, Award, Users, Heart } from "lucide-react"
-
-const stats = [
-  {
-    icon: Users,
-    value: "10W+",
-    label: "服务中国家庭",
-  },
-  {
-    icon: Award,
-    value: "99.9%",
-    label: "识别准确率",
-  },
-  {
-    icon: Shield,
-    value: "24/7",
-    label: "全天候守护",
-  },
-  {
-    icon: Heart,
-    value: "100%",
-    label: "客户满意度",
-  },
-]
-
-const values = [
-  {
-    icon: Shield,
-    title: "金融级安全标准",
-    description: "采用 AES-128 位加密技术，防撬报警，全方位守护家庭安全。",
-  },
-  {
-    icon: Users,
-    title: "以人为本的设计理念",
-    description: "简洁易用的交互设计，老人小孩都能轻松使用。",
-  },
-  {
-    icon: Award,
-    title: "持续创新研发",
-    description: "专注生物识别技术，不断推出行业领先的智能锁产品。",
-  },
-  {
-    icon: Heart,
-    title: "全国联保服务",
-    description: "24/7 客户支持，全国联保，让您无后顾之忧。",
-  },
-]
+import { useLanguage } from "@/lib/i18n/LanguageContext"
 
 export function BrandPhilosophy() {
+  const { t } = useLanguage()
+
+  const stats = [
+    {
+      icon: Users,
+      value: "10W+",
+      label: t.brand.stats.families,
+    },
+    {
+      icon: Award,
+      value: "99.9%",
+      label: t.brand.stats.accuracy,
+    },
+    {
+      icon: Shield,
+      value: "24/7",
+      label: t.brand.stats.support,
+    },
+    {
+      icon: Heart,
+      value: "100%",
+      label: t.brand.stats.satisfaction,
+    },
+  ]
+
+  const values = [
+    {
+      icon: Shield,
+      title: t.brand.values.security.title,
+      description: t.brand.values.security.desc,
+    },
+    {
+      icon: Users,
+      title: t.brand.values.user.title,
+      description: t.brand.values.user.desc,
+    },
+    {
+      icon: Award,
+      title: t.brand.values.innovation.title,
+      description: t.brand.values.innovation.desc,
+    },
+    {
+      icon: Heart,
+      title: t.brand.values.service.title,
+      description: t.brand.values.service.desc,
+    },
+  ]
+
   return (
     <section className="py-20 md:py-32 bg-card relative overflow-hidden">
       {/* Background Pattern */}
@@ -69,14 +72,12 @@ export function BrandPhilosophy() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary text-sm font-medium mb-2 block">关于丽贝卡</span>
+          <span className="text-primary text-sm font-medium mb-2 block">{t.brand.aboutBadge}</span>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            专注智能锁具 <span className="text-gradient-gold">守护家庭安全</span>
+            {t.brand.sectionTitle1} <span className="text-gradient-gold">{t.brand.sectionTitle2}</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            丽贝卡（Rebekey）是一家专注于智能门锁研发与制造的品牌，
-            <br />
-            致力于为用户提供安全、便捷、智能的门锁解决方案。
+            {t.brand.description}
           </p>
         </motion.div>
 

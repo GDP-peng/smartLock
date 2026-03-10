@@ -8,12 +8,15 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import type { Product } from "@/types/product"
+import { useLanguage } from "@/lib/i18n/LanguageContext"
 
 interface FeaturedProductsProps {
   products: Product[]
 }
 
 export function FeaturedProducts({ products }: FeaturedProductsProps) {
+  const { t } = useLanguage()
+
   return (
     <section className="py-20 md:py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -24,14 +27,12 @@ export function FeaturedProducts({ products }: FeaturedProductsProps) {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary text-sm font-medium mb-2 block">产品中心</span>
+          <span className="text-primary text-sm font-medium mb-2 block">{t.featuredProducts.sectionBadge}</span>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            热门<span className="text-gradient-gold">推荐</span>
+            {t.featuredProducts.sectionTitle1}<span className="text-gradient-gold">{t.featuredProducts.sectionTitle2}</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            探索丽贝卡智能锁系列产品，3D 人脸识别、掌静脉解锁、AI 智能语音
-            <br />
-            为您的家庭提供全方位的安全守护
+            {t.featuredProducts.description}
           </p>
         </motion.div>
 
@@ -58,17 +59,17 @@ export function FeaturedProducts({ products }: FeaturedProductsProps) {
                     {/* Badges */}
                     <div className="absolute top-4 left-4 flex gap-2">
                       {product.isNew && (
-                        <Badge variant="gold" className="text-xs">新品</Badge>
+                        <Badge variant="gold" className="text-xs">{t.common.new}</Badge>
                       )}
                       {product.isFeatured && (
-                        <Badge variant="secondary" className="text-xs">热销</Badge>
+                        <Badge variant="secondary" className="text-xs">{t.common.hot}</Badge>
                       )}
                     </div>
 
                     {/* Hover Overlay */}
                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <Button variant="secondary" size="lg">
-                        查看详情
+                        {t.common.viewDetails}
                         <ArrowRight className="ml-2" />
                       </Button>
                     </div>
@@ -104,7 +105,7 @@ export function FeaturedProducts({ products }: FeaturedProductsProps) {
         >
           <Link href="/products">
             <Button variant="outline" size="lg" className="min-w-[160px]">
-              查看全部产品
+              {t.featuredProducts.viewAll}
               <ArrowRight className="ml-2" />
             </Button>
           </Link>

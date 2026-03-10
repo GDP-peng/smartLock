@@ -1,12 +1,11 @@
+"use client"
+
 import { getAllProducts } from "@/lib/products"
 import { ProductCard } from "@/components/product/ProductCard"
-
-export const metadata = {
-  title: "产品中心 - Rebekey 丽贝卡",
-  description: "探索丽贝卡智能锁系列产品，包括 AI 智能系列和经典系列，3D 人脸识别、掌静脉解锁等多种智能锁款式。",
-}
+import { useLanguage } from "@/lib/i18n/LanguageContext"
 
 export default function ProductsPage() {
+  const { t } = useLanguage()
   const allProducts = getAllProducts()
 
   return (
@@ -15,12 +14,10 @@ export default function ProductsPage() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-16">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            我们的<span className="text-gradient-gold">产品</span>
+            {t.productsPage.title1}<span className="text-gradient-gold">{t.productsPage.title2}</span>
           </h1>
           <p className="text-lg text-muted-foreground">
-            探索丽贝卡智能锁全系列，从 AI 智能系列到经典系列，
-            <br />
-            为您的家庭提供全方位的安全守护。
+            {t.productsPage.description}
           </p>
         </div>
       </div>

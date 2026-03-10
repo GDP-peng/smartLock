@@ -2,41 +2,44 @@
 
 import { motion } from "framer-motion"
 import { Shield, Wifi, Fingerprint, Battery, Zap, Lock } from "lucide-react"
-
-const features = [
-  {
-    icon: Fingerprint,
-    title: "3D 人脸识别",
-    description: "3D 结构光人脸识别技术，0.3 秒快速解锁，99.9% 准确率。",
-  },
-  {
-    icon: Wifi,
-    title: "智能互联",
-    description: "支持 APP 远程控制，小德同学 AI 语音，智能家居联动。",
-  },
-  {
-    icon: Shield,
-    title: "金融级安全",
-    description: "AES-128 位加密，防撬报警，全方位守护家庭安全。",
-  },
-  {
-    icon: Battery,
-    title: "持久续航",
-    description: "大容量锂电池，6-12 个月超长续航，Type-C 应急供电。",
-  },
-  {
-    icon: Zap,
-    title: "多种开锁方式",
-    description: "人脸/掌静脉/指纹/密码/IC 卡/钥匙，满足全家需求。",
-  },
-  {
-    icon: Lock,
-    title: "实时监控",
-    description: "门外逗留抓拍，APP 实时推送，远程可视对讲。",
-  },
-]
+import { useLanguage } from "@/lib/i18n/LanguageContext"
 
 export function TechnologyHighlights() {
+  const { t } = useLanguage()
+
+  const features = [
+    {
+      icon: Fingerprint,
+      title: t.technology.features.face,
+      description: t.technology.features.faceDesc,
+    },
+    {
+      icon: Wifi,
+      title: t.technology.features.smart,
+      description: t.technology.features.smartDesc,
+    },
+    {
+      icon: Shield,
+      title: t.technology.features.security,
+      description: t.technology.features.securityDesc,
+    },
+    {
+      icon: Battery,
+      title: t.technology.features.battery,
+      description: t.technology.features.batteryDesc,
+    },
+    {
+      icon: Zap,
+      title: t.technology.features.unlock,
+      description: t.technology.features.unlockDesc,
+    },
+    {
+      icon: Lock,
+      title: t.technology.features.monitor,
+      description: t.technology.features.monitorDesc,
+    },
+  ]
+
   return (
     <section className="py-20 md:py-32 bg-card relative overflow-hidden">
       {/* Background Pattern */}
@@ -55,14 +58,12 @@ export function TechnologyHighlights() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary text-sm font-medium mb-2 block">技术亮点</span>
+          <span className="text-primary text-sm font-medium mb-2 block">{t.technology.sectionBadge}</span>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            核心科技 <span className="text-gradient-gold">守护安全</span>
+            {t.technology.sectionTitle1} <span className="text-gradient-gold">{t.technology.sectionTitle2}</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            丽贝卡智能锁采用先进的生物识别技术和 AI 智能系统，
-            <br />
-            为您的家庭提供全方位的安全守护。
+            {t.technology.description}
           </p>
         </motion.div>
 

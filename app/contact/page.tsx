@@ -4,22 +4,18 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { Copy, Check } from "lucide-react"
 import { useState } from "react"
-
-const qrCodes = [
-  {
-    name: "企业微信",
-    image: "/images/contact/wechat-qr.png",
-    description: "扫描二维码添加企业微信",
-  },
-  // 后续可以添加更多平台
-  // {
-  //   name: "微信公众号",
-  //   image: "/images/contact/wechat-official.png",
-  //   description: "扫描二维码关注公众号",
-  // },
-]
+import { useLanguage } from "@/lib/i18n/LanguageContext"
 
 export default function ContactPage() {
+  const { t } = useLanguage()
+
+  const qrCodes = [
+    {
+      name: t.contactPage.wechat.name,
+      image: "/images/contact/wechat-qr.png",
+      description: t.contactPage.wechat.description,
+    },
+  ]
   return (
     <div className="pt-20 md:pt-24 pb-20 min-h-screen">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,14 +26,12 @@ export default function ContactPage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary text-sm font-medium mb-2 block">联系我们</span>
+          <span className="text-primary text-sm font-medium mb-2 block">{t.contactPage.badge}</span>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            添加<span className="text-gradient-gold">企业微信</span>
+            {t.contactPage.title1}<span className="text-gradient-gold">{t.contactPage.title2}</span>
           </h1>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            扫描二维码添加我们的企业微信，
-            <br />
-            获取产品咨询、报价、安装等一对一专属服务。
+            {t.contactPage.description}
           </p>
         </motion.div>
 
@@ -77,11 +71,11 @@ export default function ContactPage() {
           className="mt-20 max-w-2xl mx-auto"
         >
           <div className="bg-card border border-border rounded-2xl p-8">
-            <h2 className="text-xl font-semibold mb-6 text-center">其他联系方式</h2>
+            <h2 className="text-xl font-semibold mb-6 text-center">{t.contactPage.otherTitle}</h2>
             <div className="space-y-4">
-              <ContactRow label="服务热线" value="400-XXX-XXXX" />
-              <ContactRow label="商务合作" value="business@rebekey.com" />
-              <ContactRow label="工作时间" value="周一至周日 9:00-21:00" />
+              <ContactRow label={t.contactPage.hotline.label} value={t.contactPage.hotline.value} />
+              <ContactRow label={t.contactPage.business.label} value={t.contactPage.business.value} />
+              <ContactRow label={t.contactPage.hours.label} value={t.contactPage.hours.value} />
             </div>
           </div>
         </motion.div>

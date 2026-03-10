@@ -9,6 +9,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import type { Product } from "@/types/product"
+import { useLanguage } from "@/lib/i18n/LanguageContext"
 
 interface ProductCardProps {
   product: Product
@@ -16,6 +17,7 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product, index = 0 }: ProductCardProps) {
+  const { t } = useLanguage()
   const [isImageLoaded, setIsImageLoaded] = useState(false)
 
   return (
@@ -45,17 +47,17 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
             {/* Badges */}
             <div className="absolute top-4 left-4 flex gap-2">
               {product.isNew && (
-                <Badge variant="gold" className="text-xs">新品</Badge>
+                <Badge variant="gold" className="text-xs">{t.common.new}</Badge>
               )}
               {product.isFeatured && (
-                <Badge variant="secondary" className="text-xs">热销</Badge>
+                <Badge variant="secondary" className="text-xs">{t.common.hot}</Badge>
               )}
             </div>
 
             {/* Hover Overlay */}
             <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
               <Button variant="secondary" size="lg">
-                查看详情
+                {t.common.viewDetails}
                 <ArrowRight className="ml-2" />
               </Button>
             </div>

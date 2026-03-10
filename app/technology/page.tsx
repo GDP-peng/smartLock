@@ -4,54 +4,51 @@ import { motion } from "framer-motion"
 import { Shield, Cpu, Wifi, Lock, Zap, ScanFace } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-
-const technologies = [
-  {
-    icon: Shield,
-    title: "金融级加密",
-    description: "AES-128 位加密技术，金融级别的安全防护，保护您的数据免受未授权访问。",
-    stats: "128-bit",
-  },
-  {
-    icon: ScanFace,
-    title: "3D 人脸识别",
-    description: "3D 结构光人脸识别技术，毫秒级解锁速度，99.9% 识别准确率。",
-    stats: "99.9%",
-  },
-  {
-    icon: Wifi,
-    title: "智能互联",
-    description: "支持 WiFi、蓝牙等多种连接方式，无缝对接智能家居系统。",
-    stats: "多协议",
-  },
-  {
-    icon: Lock,
-    title: "防撬报警",
-    description: "内置高灵敏度传感器，检测到撬动立即报警并推送 APP 通知。",
-    stats: "< 100ms",
-  },
-  {
-    icon: Zap,
-    title: "持久续航",
-    description: "智能功耗管理系统，大容量锂电池，6-12 个月超长续航。",
-    stats: "6-12 月",
-  },
-  {
-    icon: Cpu,
-    title: "AI 智能语音",
-    description: "内置小德同学 AI 语音助手，支持语音控制、天气查询等功能。",
-    stats: "AI 智能",
-  },
-]
-
-const milestones = [
-  { year: "2020", title: "品牌创立", description: "丽贝卡（Rebekey）品牌创立，专注于智能门锁研发与制造。" },
-  { year: "2021", title: "产品上市", description: "首款智能锁产品上市，获得市场认可。" },
-  { year: "2023", title: "技术突破", description: "3D 人脸识别、掌静脉识别等核心技术取得突破。" },
-  { year: "2024", title: "服务 10W+ 家庭", description: "累计服务超过 10 万中国家庭，用户满意度达 99.9%。" },
-]
+import { useLanguage } from "@/lib/i18n/LanguageContext"
 
 export default function TechnologyPage() {
+  const { t } = useLanguage()
+
+  const technologies = [
+    {
+      icon: Shield,
+      title: t.technologyPage.tech.encryption.title,
+      description: t.technologyPage.tech.encryption.desc,
+      stats: t.technologyPage.tech.encryption.stats,
+    },
+    {
+      icon: ScanFace,
+      title: t.technologyPage.tech.face.title,
+      description: t.technologyPage.tech.face.desc,
+      stats: t.technologyPage.tech.face.stats,
+    },
+    {
+      icon: Wifi,
+      title: t.technologyPage.tech.smart.title,
+      description: t.technologyPage.tech.smart.desc,
+      stats: t.technologyPage.tech.smart.stats,
+    },
+    {
+      icon: Lock,
+      title: t.technologyPage.tech.alarm.title,
+      description: t.technologyPage.tech.alarm.desc,
+      stats: t.technologyPage.tech.alarm.stats,
+    },
+    {
+      icon: Zap,
+      title: t.technologyPage.tech.battery.title,
+      description: t.technologyPage.tech.battery.desc,
+      stats: t.technologyPage.tech.battery.stats,
+    },
+    {
+      icon: Cpu,
+      title: t.technologyPage.tech.ai.title,
+      description: t.technologyPage.tech.ai.desc,
+      stats: t.technologyPage.tech.ai.stats,
+    },
+  ]
+
+  const milestones = t.technologyPage.milestones.items
   return (
     <div className="pt-20 md:pt-24 pb-20">
       {/* Hero */}
@@ -62,14 +59,13 @@ export default function TechnologyPage() {
           viewport={{ once: true }}
           className="max-w-3xl"
         >
-          <span className="text-primary text-sm font-medium mb-2 block">技术亮点</span>
+          <span className="text-primary text-sm font-medium mb-2 block">{t.technologyPage.badge}</span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            核心科技
-            <span className="block text-gradient-gold">守护安全</span>
+            {t.technologyPage.title1}
+            <span className="block text-gradient-gold">{t.technologyPage.title2}</span>
           </h1>
           <p className="text-lg text-muted-foreground">
-            丽贝卡智能锁采用先进的生物识别技术和 AI 智能系统，
-            为您的家庭提供全方位的安全守护。
+            {t.technologyPage.description}
           </p>
         </motion.div>
       </div>
@@ -114,7 +110,7 @@ export default function TechnologyPage() {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h2 className="text-3xl font-bold mb-8">发展历程</h2>
+          <h2 className="text-3xl font-bold mb-8">{t.technologyPage.milestones.title}</h2>
         </motion.div>
 
         <div className="relative">
@@ -137,7 +133,7 @@ export default function TechnologyPage() {
                   <CardContent className="p-6">
                     <span className="text-primary font-mono text-sm">{milestone.year}</span>
                     <h3 className="text-xl font-semibold mt-1 mb-2">{milestone.title}</h3>
-                    <p className="text-muted-foreground">{milestone.description}</p>
+                    <p className="text-muted-foreground">{milestone.desc}</p>
                   </CardContent>
                 </Card>
               </div>

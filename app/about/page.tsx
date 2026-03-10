@@ -5,40 +5,42 @@ import { Users, Award, Globe, Heart, Target, Lightbulb } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-
-const stats = [
-  { value: "10W+", label: "服务中国家庭" },
-  { value: "99.9%", label: "识别准确率" },
-  { value: "24/7", label: "全天候守护" },
-  { value: "全国", label: "联保服务" },
-]
-
-const values = [
-  {
-    icon: Target,
-    title: "我们的使命",
-    description: "让每个家庭都能享受到智能科技带来的安全与便捷。",
-  },
-  {
-    icon: Lightbulb,
-    title: "创新驱动",
-    description: "持续投入研发，不断推出领先的生物识别技术和 AI 智能产品。",
-  },
-  {
-    icon: Heart,
-    title: "用户至上",
-    description: "以用户需求为中心，提供优质的产品和贴心的服务。",
-  },
-]
-
-const team = [
-  { name: "产品团队", role: "专业研发", image: "P" },
-  { name: "技术团队", role: "创新突破", image: "T" },
-  { name: "设计团队", role: "精工美学", image: "D" },
-  { name: "服务团队", role: "贴心支持", image: "S" },
-]
+import { useLanguage } from "@/lib/i18n/LanguageContext"
 
 export default function AboutPage() {
+  const { t } = useLanguage()
+
+  const stats = [
+    { value: "10W+", label: t.aboutPage.stats.families },
+    { value: "99.9%", label: t.aboutPage.stats.accuracy },
+    { value: "24/7", label: t.aboutPage.stats.support },
+    { value: t.aboutPage.stats.warranty, label: "" },
+  ]
+
+  const values = [
+    {
+      icon: Target,
+      title: t.aboutPage.values.mission.title,
+      description: t.aboutPage.values.mission.desc,
+    },
+    {
+      icon: Lightbulb,
+      title: t.aboutPage.values.innovation.title,
+      description: t.aboutPage.values.innovation.desc,
+    },
+    {
+      icon: Heart,
+      title: t.aboutPage.values.user.title,
+      description: t.aboutPage.values.user.desc,
+    },
+  ]
+
+  const team = [
+    { name: t.aboutPage.team.product.name, role: t.aboutPage.team.product.role, image: "P" },
+    { name: t.aboutPage.team.tech.name, role: t.aboutPage.team.tech.role, image: "T" },
+    { name: t.aboutPage.team.design.name, role: t.aboutPage.team.design.role, image: "D" },
+    { name: t.aboutPage.team.service.name, role: t.aboutPage.team.service.role, image: "S" },
+  ]
   return (
     <div className="pt-20 md:pt-24 pb-20">
       {/* Hero */}
@@ -50,11 +52,10 @@ export default function AboutPage() {
           className="max-w-3xl"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            关于 <span className="text-gradient-gold">丽贝卡</span>
+            {t.aboutPage.title1} <span className="text-gradient-gold">{t.aboutPage.title2}</span>
           </h1>
           <p className="text-lg text-muted-foreground">
-            丽贝卡（Rebekey）是一家专注于智能门锁研发与制造的品牌，
-            致力于为用户提供安全、便捷、智能的门锁解决方案。
+            {t.aboutPage.description}
           </p>
         </motion.div>
       </div>
@@ -88,9 +89,9 @@ export default function AboutPage() {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4">核心价值</h2>
+          <h2 className="text-3xl font-bold mb-4">{t.aboutPage.values.title}</h2>
           <p className="text-muted-foreground max-w-2xl">
-            指引我们前进的理念。
+            {t.aboutPage.values.description}
           </p>
         </motion.div>
 
@@ -125,9 +126,9 @@ export default function AboutPage() {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4">专业团队</h2>
+          <h2 className="text-3xl font-bold mb-4">{t.aboutPage.team.title}</h2>
           <p className="text-muted-foreground max-w-2xl">
-            用心打造每一款产品。
+            {t.aboutPage.team.description}
           </p>
         </motion.div>
 
@@ -162,14 +163,14 @@ export default function AboutPage() {
           <div className="absolute inset-0 gradient-metallic/10" />
           <div className="relative">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              选择丽贝卡 选择安全
+              {t.aboutPage.cta.title}
             </h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              探索我们的智能锁系列产品，为您的家庭提供全方位的安全守护。
+              {t.aboutPage.cta.description}
             </p>
             <Link href="/products">
               <Button size="lg" className="gradient-gold text-black">
-                查看产品
+                {t.aboutPage.cta.button}
               </Button>
             </Link>
           </div>
