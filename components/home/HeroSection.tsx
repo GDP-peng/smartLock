@@ -1,9 +1,11 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight, Play } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+
+const BUY_LINK = "https://qr.1688.com/s/bhc4cCvS"
 
 export function HeroSection() {
   return (
@@ -80,16 +82,15 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Link href="/products">
+            <a href={BUY_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex">
               <Button size="lg" className="gradient-gold text-black h-12 px-8 text-base">
-                查看产品
+                立即购买
                 <ArrowRight className="ml-2" />
               </Button>
-            </Link>
-            <Link href="/about">
+            </a>
+            <Link href="/products">
               <Button size="lg" variant="outline" className="h-12 px-8 text-base">
-                <Play className="mr-2 h-4 w-4" />
-                了解更多
+                查看产品
               </Button>
             </Link>
           </motion.div>

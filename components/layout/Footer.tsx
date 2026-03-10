@@ -13,18 +13,13 @@ const footerLinks = {
     { href: "/technology", label: "技术亮点" },
     { href: "/contact", label: "联系我们" },
   ],
-  support: [
-    { href: "/faq", label: "常见问题" },
-    { href: "/warranty", label: "保修政策" },
-    { href: "/installation", label: "安装指南" },
-  ],
 }
 
 export function Footer() {
   return (
     <footer className="border-t border-border bg-card">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-2">
             <Link href="/" className="mb-4 block">
@@ -92,22 +87,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Support Column */}
-          <div>
-            <h3 className="font-semibold text-foreground mb-4">客户支持</h3>
-            <ul className="space-y-3">
-              {footerLinks.support.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Support Column - Removed for pre-sales focus */}
         </div>
 
         {/* Bottom Bar */}
