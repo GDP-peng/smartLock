@@ -47,8 +47,8 @@ export default function AboutPage() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
           className="max-w-3xl"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
@@ -68,7 +68,7 @@ export default function AboutPage() {
               key={stat.label}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ delay: index * 0.1 }}
               className="text-center"
             >
@@ -85,8 +85,8 @@ export default function AboutPage() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
           className="mb-12"
         >
           <h2 className="text-3xl font-bold mb-4">{t.aboutPage.values.title}</h2>
@@ -101,7 +101,7 @@ export default function AboutPage() {
               key={value.title}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ delay: index * 0.1 }}
             >
               <Card className="h-full border-border bg-card">
@@ -122,8 +122,8 @@ export default function AboutPage() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
           className="mb-12"
         >
           <h2 className="text-3xl font-bold mb-4">{t.aboutPage.team.title}</h2>
@@ -138,7 +138,7 @@ export default function AboutPage() {
               key={member.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ delay: index * 0.1 }}
               className="text-center"
             >
@@ -156,8 +156,8 @@ export default function AboutPage() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
           className="relative rounded-3xl overflow-hidden p-12 text-center"
         >
           <div className="absolute inset-0 gradient-metallic/10" />
