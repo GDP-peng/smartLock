@@ -284,6 +284,174 @@ vercel
 
 ---
 
+---
+
+## 开发日志 - 2026-03-10 下午 - 中英文切换功能
+
+### 功能需求
+为 SmartLock 网站添加中英文语言切换功能，要求：
+- 在 Header 中添加切换按钮
+- 使用 React Context 管理语言状态
+- 只修改文字内容，图片资源保持原样
+- 确保两种语言切换时布局稳定
+- 语言偏好保存在 localStorage
+
+### 实现方案
+
+#### 1. 创建 i18n 基础设施
+
+**新增 `lib/i18n/translations.ts`**
+- 定义 `Language` 类型 ('zh' | 'en')
+- 定义 `Translation` 接口，包含所有 UI 文本的结构
+- 提供 `translations` 对象，包含中英文两套翻译
+
+**新增 `lib/i18n/LanguageContext.tsx`**
+- 创建 `LanguageContext` React Context
+- 提供 `useLanguage()` hook
+- 实现 `toggleLanguage()` 函数
+- 使用 localStorage 持久化用户偏好
+
+#### 2. 新增组件
+
+**`components/layout/LanguageToggle.tsx`**
+- 带 Globe 图标的切换按钮
+- 显示当前语言（中文/EN）
+- 点击切换中英文
+
+**`components/product/ProductDetailContent.tsx`**
+- 产品详情页内容组件（客户端组件）
+- 支持多语言显示
+
+#### 3. 修改文件
+
+| 文件 | 修改内容 |
+|------|----------|
+| `app/layout.tsx` | 添加 LanguageProvider 包裹应用 |
+| `app/products/page.tsx` | 改为客户端组件，使用 useLanguage |
+| `app/products/[slug]/page.tsx` | 使用 ProductDetailContent 组件 |
+| `app/about/page.tsx` | 使用翻译 + 动画修复 |
+| `app/technology/page.tsx` | 使用翻译 + 动画修复 |
+| `app/contact/page.tsx` | 使用翻译 |
+| `components/layout/Header.tsx` | 添加 LanguageToggle，导航多语言 |
+| `components/layout/Footer.tsx` | 页脚多语言 |
+| `components/home/HeroSection.tsx` | Hero 区域多语言 |
+| `components/home/FeaturedProducts.tsx` | 产品推荐多语言 |
+| `components/home/TechnologyHighlights.tsx` | 技术亮点多语言 |
+| `components/home/BrandPhilosophy.tsx` | 品牌理念多语言 |
+| `components/product/ProductCard.tsx` | 产品卡片多语言 |
+
+### Bug 修复：页面偶发黑屏
+
+#### 问题现象
+访问 `/about` 或 `/technology` 页面时，刷新后内容不可见（黑色），需要滚动鼠标才逐步显示。
+
+#### 根本原因
+framer-motion 的 `whileInView` 依赖 IntersectionObserver API。当页面刷新时：
+1. 浏览器恢复之前的滚动位置
+2. 元素已经在视口内
+3. IntersectionObserver 没有检测到"进入"事件
+4. 元素保持 `initial={{ opacity: 0 }}` 状态，永不显示
+
+#### 解决方案
+将所有 `whileInView` 改为 `animate`，确保动画在组件挂载时立即执行：
+
+```diff
+// 修复前
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+>
+
+// 修复后
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+>
+```
+
+这与首页 HeroSection 的工作模式保持一致。
+
+### Git Commits
+
+```
+db496d2 - feat: add Chinese-English language toggle feature
+  - 创建完整的 i18n 系统
+  - 添加中英文翻译字典
+  - 实现语言切换功能
+  - 更新所有页面和组件
+
+0d49210 - fix: resolve black screen issue on Technology and About pages
+  - 修复偶发黑屏问题
+  - 添加 viewport amount 配置
+
+2e38e17 - fix: replace whileInView with animate to prevent black screen bug
+  - 彻底替换 whileInView 为 animate
+  - 确保所有元素在挂载时可见
+```
+
+### 待办事项 (TODO)
+
+以下功能当前未实现，后续可以考虑添加：
+
+- [ ] **产品数据多语言** - `lib/products.ts` 中的产品名称、描述、参数等仍为中文
+- [ ] **页面 metadata 多语言** - SEO 相关的 title/description 目前只有中文
+- [ ] **产品数据迁移** - 考虑将产品数据迁移到独立的翻译文件
+
+### 技术细节
+
+#### useLanguage Hook 使用方式
+
+```tsx
+"use client"
+
+import { useLanguage } from "@/lib/i18n/LanguageContext"
+
+function MyComponent() {
+  const { language, t, toggleLanguage } = useLanguage()
+
+  return (
+    <div>
+      <button onClick={toggleLanguage}>
+        {language === 'zh' ? '中文' : 'EN'}
+      </button>
+      <h1>{t.hero.title}</h1>
+    </div>
+  )
+}
+```
+
+#### 翻译结构
+
+```typescript
+{
+  nav: { home, products, technology, about, contact },
+  common: { buyNow, viewDetails, new, hot, ... },
+  hero: { badge, title1, title2, description, features, ... },
+  featuredProducts: { sectionBadge, sectionTitle1, sectionTitle2, ... },
+  technology: { sectionBadge, sectionTitle1, sectionTitle2, features: {...} },
+  brand: { aboutBadge, sectionTitle1, sectionTitle2, stats, values },
+  productsPage: { title1, title2, description },
+  aboutPage: { title1, title2, stats, values, team, cta },
+  technologyPage: { badge, title1, title2, tech, milestones },
+  contactPage: { badge, title1, title2, wechat, hotline, ... },
+  productDetail: { buyNow, freeShipping, warranty, coreFeatures, ... },
+  footer: { productsTitle, companyTitle, brandDesc, ... }
+}
+```
+
+### 当前状态 (更新后)
+
+- ✅ 中英文切换功能完整实现
+- ✅ 语言偏好 localStorage 持久化
+- ✅ 所有页面支持多语言切换
+- ✅ 黑屏 bug 已修复
+- ✅ 构建验证通过 (`npm run build`)
+- ✅ 代码已提交到 git
+
+---
+
 ## 开发日志 - 2026-03-10
 
 ### 环境配置
