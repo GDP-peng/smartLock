@@ -22,7 +22,7 @@ export interface Product {
   price: number;
   images: string[];
   video?: string;
-  detailImages?: string[];
+  detailImages: string[];
   specifications: SpecCategory[];
   features: Feature[];
   isFeatured: boolean;

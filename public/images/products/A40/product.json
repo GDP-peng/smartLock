@@ -1,0 +1,98 @@
+{
+  "slug": "a40",
+  "name": "A40",
+  "series": "高端定制系列",
+  "tagline": "3D 人脸识别 AI 智能锁 大理石纹定制",
+  "price": 2180,
+  "published": true,
+  "isFeatured": true,
+  "isNew": true,
+  "images": [
+    "/images/products/A40/1.jpg",
+    "/images/products/A40/2.jpg",
+    "/images/products/A40/3.jpg"
+  ],
+  "detailImages": [
+    "/images/products/A40/1.jpg",
+    "/images/products/A40/2.jpg",
+    "/images/products/A40/3.jpg",
+    "/images/products/A40/4.jpg",
+    "/images/products/A40/5.jpg",
+    "/images/products/A40/7.jpg",
+    "/images/products/A40/8.jpg",
+    "/images/products/A40/9.jpg",
+    "/images/products/A40/10.jpg",
+    "/images/products/A40/11.jpg",
+    "/images/products/A40/12.jpg",
+    "/images/products/A40/13.jpg"
+  ],
+  "features": [
+    {
+      "icon": "face",
+      "title": "3D 人脸识别",
+      "description": "3D 结构光人脸识别技术，刷脸开锁，解放双手。"
+    },
+    {
+      "icon": "scan",
+      "title": "掌静脉识别",
+      "description": "扫描手掌静脉血管图，安全系数更高，不受身高限制。"
+    },
+    {
+      "icon": "palette",
+      "title": "定制外观",
+      "description": "大理石纹/磨砂黑双色可选，标配合金把手盖。"
+    },
+    {
+      "icon": "screen",
+      "title": "双屏显示",
+      "description": "1.8 英寸灵动外屏 + 4.5 英寸室内大屏，门外访客一目了然。"
+    }
+  ],
+  "specifications": [
+    {
+      "category": "安全性能",
+      "specs": [
+        { "name": "人脸识别", "value": "3D 结构光人脸识别" },
+        { "name": "掌静脉识别", "value": "支持" },
+        { "name": "指纹容量", "value": "200 枚" },
+        { "name": "密码容量", "value": "200 组" },
+        { "name": "加密方式", "value": "AES-128 位加密" }
+      ]
+    },
+    {
+      "category": "智能功能",
+      "specs": [
+        { "name": "智能语音", "value": "小德同学 AI 语音" },
+        { "name": "APP 控制", "value": "支持 iOS/Android" },
+        { "name": "远程开锁", "value": "支持" },
+        { "name": "临时密码", "value": "支持" }
+      ]
+    },
+    {
+      "category": "显示屏幕",
+      "specs": [
+        { "name": "室内显示屏", "value": "4.5 英寸高清屏" },
+        { "name": "室外灵动屏", "value": "1.8 英寸表情屏" },
+        { "name": "摄像头", "value": "高清广角摄像头" }
+      ]
+    },
+    {
+      "category": "电源续航",
+      "specs": [
+        { "name": "电池类型", "value": "大容量锂电池" },
+        { "name": "续航时间", "value": "8-12 个月" },
+        { "name": "应急供电", "value": "Type-C" }
+      ]
+    },
+    {
+      "category": "物理规格",
+      "specs": [
+        { "name": "面板材质", "value": "CNC 精雕铝合金" },
+        { "name": "表面处理", "value": "大理石纹/磨砂黑 双色可选" },
+        { "name": "产品尺寸", "value": "420 x 72 x 28 mm" },
+        { "name": "适用门厚", "value": "40-120mm" },
+        { "name": "把手盖", "value": "标配双色把手盖" }
+      ]
+    }
+  ]
+}
