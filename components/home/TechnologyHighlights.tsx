@@ -67,7 +67,7 @@ export function TechnologyHighlights() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
@@ -77,12 +77,14 @@ export function TechnologyHighlights() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group"
             >
-              <div className="bg-background rounded-2xl p-8 border border-border hover:border-primary/50 transition-all duration-300 h-full">
-                <div className="w-14 h-14 rounded-xl gradient-gold flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <feature.icon className="w-7 h-7 text-black" />
+              <div className="bg-background rounded-2xl p-5 md:p-8 border border-border hover:border-primary/50 transition-all duration-300 h-full">
+                {/* 图标：手机上小一些 */}
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl gradient-gold flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <feature.icon className="w-6 h-6 md:w-7 md:h-7 text-black" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">
+                {/* 标题和描述：手机上字号小一些 */}
+                <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">{feature.title}</h3>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                   {feature.description}
                 </p>
               </div>

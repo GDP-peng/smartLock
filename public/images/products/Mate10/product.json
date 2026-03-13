@@ -6,14 +6,14 @@
   "price": 1380,
   "published": true,
   "isFeatured": false,
-  "isNew": false,
+  "isNew": true,
   "images": [
     "/images/products/Mate10/1.png",
     "/images/products/Mate10/2.png"
   ],
   "detailImages": [
     "/images/products/Mate10/1.png",
-    "/images/products/Mate10/2.png",
+    "/images/products/Mate10/2.jpg",
     "/images/products/Mate10/3.png",
     "/images/products/Mate10/4.jpg",
     "/images/products/Mate10/5.jpg",

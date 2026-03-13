@@ -82,7 +82,7 @@ export function BrandPhilosophy() {
         </motion.div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-16 md:mb-20">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -92,13 +92,15 @@ export function BrandPhilosophy() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="text-center"
             >
-              <div className="w-14 h-14 rounded-xl gradient-gold flex items-center justify-center mx-auto mb-4">
-                <stat.icon className="w-7 h-7 text-black" />
+              {/* 图标：手机上小一些 */}
+              <div className="w-10 h-10 md:w-14 md:h-14 rounded-xl gradient-gold flex items-center justify-center mx-auto mb-3 md:mb-4">
+                <stat.icon className="w-5 h-5 md:w-7 md:h-7 text-black" />
               </div>
-              <div className="text-4xl md:text-5xl font-bold text-gradient-gold mb-2">
+              {/* 数值：手机上字号小一些 */}
+              <div className="text-3xl md:text-5xl font-bold text-gradient-gold mb-1 md:mb-2">
                 {stat.value}
               </div>
-              <p className="text-muted-foreground">{stat.label}</p>
+              <p className="text-xs md:text-sm text-muted-foreground">{stat.label}</p>
             </motion.div>
           ))}
         </div>

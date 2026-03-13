@@ -30,7 +30,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 
 export function ProductFeatures({ features }: ProductFeaturesProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
       {features.map((feature, index) => {
         const Icon = iconMap[feature.icon] || Zap
         return (
@@ -40,14 +40,16 @@ export function ProductFeatures({ features }: ProductFeaturesProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="flex gap-4 p-4 rounded-xl bg-secondary/50 border border-border"
+            className="flex gap-3 md:gap-4 p-3 md:p-4 rounded-xl bg-secondary/50 border border-border"
           >
-            <div className="flex-shrink-0 w-12 h-12 rounded-lg gradient-gold flex items-center justify-center">
-              <Icon className="w-6 h-6 text-black" />
+            {/* 图标：手机上小一些，电脑上正常 */}
+            <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-lg gradient-gold flex items-center justify-center">
+              <Icon className="w-5 h-5 md:w-6 md:h-6 text-black" />
             </div>
-            <div>
-              <h3 className="font-semibold mb-1">{feature.title}</h3>
-              <p className="text-sm text-muted-foreground">{feature.description}</p>
+            <div className="flex-1 min-w-0">
+              {/* 标题和描述字号响应式调整 */}
+              <h3 className="font-semibold text-sm md:text-base mb-1">{feature.title}</h3>
+              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
             </div>
           </motion.div>
         )
