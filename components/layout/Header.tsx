@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { useLanguage } from "@/lib/i18n/LanguageContext"
 import { LanguageToggle } from "./LanguageToggle"
+import { ThemeToggle } from "./ThemeToggle"
 
 const BUY_LINK = "https://qr.1688.com/s/bhc4cCvS"
 
@@ -82,12 +83,13 @@ export function Header() {
                   )}
                 </Link>
               ))}
-              <div className="w-px h-6 bg-border mx-2" />
-              <LanguageToggle />
             </nav>
 
             {/* CTA Button */}
-            <div className="hidden md:block">
+            <div className="hidden md:flex items-center gap-2">
+              <LanguageToggle />
+              <div className="w-px h-6 bg-border" />
+              <ThemeToggle />
               <a href={BUY_LINK} target="_blank" rel="noopener noreferrer">
                 <Button className="gradient-primary text-white hover:shadow-blue btn-glow transition-all duration-300">
                   <Sparkles className="w-4 h-4 mr-2" />
@@ -118,6 +120,10 @@ export function Header() {
               transition={{ duration: 0.3 }}
               className="md:hidden border-b border-border bg-background overflow-hidden"
             >
+              <div className="flex items-center justify-end gap-2 px-4 py-3 border-b border-border">
+                <LanguageToggle />
+                <ThemeToggle />
+              </div>
               <nav className="container mx-auto px-4 py-4 flex flex-col gap-2">
                 {navItems.map((item) => (
                   <Link
@@ -134,9 +140,6 @@ export function Header() {
                     {item.label}
                   </Link>
                 ))}
-                <div className="flex items-center gap-2 py-2">
-                  <LanguageToggle />
-                </div>
                 <a href={BUY_LINK} target="_blank" rel="noopener noreferrer" className="w-full">
                   <Button className="gradient-primary text-white w-full shadow-lg">
                     <Sparkles className="w-4 h-4 mr-2" />

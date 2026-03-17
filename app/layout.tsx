@@ -3,6 +3,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { LanguageProvider } from "@/lib/i18n/LanguageContext";
+import { ThemeProvider, ThemeProviderScript } from "@/lib/theme/ThemeContext";
 
 export const metadata: Metadata = {
   title: "Rebekey 丽贝卡 - 智能锁十大品牌",
@@ -22,13 +23,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN" className="dark">
+    <html lang="zh-CN" suppressHydrationWarning>
+      <head>
+        <ThemeProviderScript />
+      </head>
       <body className="antialiased min-h-screen bg-background text-foreground">
-        <LanguageProvider>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </LanguageProvider>
+        <ThemeProvider defaultTheme="dark" storageKey="smartlock-theme">
+          <LanguageProvider>
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
