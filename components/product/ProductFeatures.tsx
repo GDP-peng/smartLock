@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import type { Feature } from "@/types/product"
-import { Fingerprint, Wifi, Shield, Battery, Zap, Lock, Video, Activity, Users, Server, ShieldCheck, FileText, Key, Bluetooth, Clock, ScanFace, Mic } from "lucide-react"
+import { Fingerprint, Wifi, Shield, Battery, Zap, Lock, Video, Activity, Users, Server, ShieldCheck, FileText, Key, Bluetooth, Clock, ScanFace, Mic, Sparkles } from "lucide-react"
 
 interface ProductFeaturesProps {
   features: Feature[]
@@ -40,15 +40,15 @@ export function ProductFeatures({ features }: ProductFeaturesProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="flex gap-3 md:gap-4 p-3 md:p-4 rounded-xl bg-secondary/50 border border-border"
+            whileHover={{ scale: 1.02 }}
+            className="group flex gap-3 md:gap-4 p-4 md:p-5 rounded-xl bg-secondary/30 border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-gold/20"
           >
-            {/* 图标：手机上小一些，电脑上正常 */}
-            <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-lg gradient-gold flex items-center justify-center">
+            {/* Icon with glow effect */}
+            <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-lg gradient-gold flex items-center justify-center group-hover:shadow-gold transition-shadow duration-300">
               <Icon className="w-5 h-5 md:w-6 md:h-6 text-black" />
             </div>
             <div className="flex-1 min-w-0">
-              {/* 标题和描述字号响应式调整 */}
-              <h3 className="font-semibold text-sm md:text-base mb-1">{feature.title}</h3>
+              <h3 className="font-semibold text-sm md:text-base mb-1 group-hover:text-primary transition-colors duration-300">{feature.title}</h3>
               <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
             </div>
           </motion.div>
