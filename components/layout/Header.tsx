@@ -89,7 +89,7 @@ export function Header() {
             {/* CTA Button */}
             <div className="hidden md:block">
               <a href={BUY_LINK} target="_blank" rel="noopener noreferrer">
-                <Button className="gradient-gold text-black hover:shadow-gold transition-all duration-300">
+                <Button className="gradient-primary text-white hover:shadow-blue btn-glow transition-all duration-300">
                   <Sparkles className="w-4 h-4 mr-2" />
                   {t.common.buyNow}
                 </Button>
@@ -138,7 +138,7 @@ export function Header() {
                   <LanguageToggle />
                 </div>
                 <a href={BUY_LINK} target="_blank" rel="noopener noreferrer" className="w-full">
-                  <Button className="gradient-gold text-black w-full shadow-lg">
+                  <Button className="gradient-primary text-white w-full shadow-lg">
                     <Sparkles className="w-4 h-4 mr-2" />
                     {t.common.buyNow}
                   </Button>

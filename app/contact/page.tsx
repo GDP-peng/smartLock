@@ -28,7 +28,7 @@ export default function ContactPage() {
         >
           <span className="text-primary text-sm font-medium mb-2 block">{t.contactPage.badge}</span>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            {t.contactPage.title1}<span className="text-gradient-gold">{t.contactPage.title2}</span>
+            {t.contactPage.title1}<span className="text-gradient-primary-shimmer">{t.contactPage.title2}</span>
           </h1>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             {t.contactPage.description}

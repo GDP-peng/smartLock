@@ -41,7 +41,7 @@ export function TechnologyHighlights() {
   ]
 
   return (
-    <section className="py-20 md:py-32 bg-card relative overflow-hidden">
+    <section className="py-20 md:py-32 bg-background relative overflow-hidden">
       {/* Background Pattern - Enhanced */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -50,8 +50,11 @@ export function TechnologyHighlights() {
         }} />
       </div>
 
+      {/* Section background */}
+      <div className="absolute inset-0 section-alt opacity-100" />
+
       {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 gradient-radial-gold opacity-20 pointer-events-none" />
+      <div className="absolute inset-0 gradient-radial-primary opacity-20 pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
@@ -72,8 +75,8 @@ export function TechnologyHighlights() {
             <Cpu className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium">{t.technology.sectionBadge}</span>
           </motion.div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            {t.technology.sectionTitle1} <span className="text-gradient-gold-shimmer">{t.technology.sectionTitle2}</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+            {t.technology.sectionTitle1} <span className="text-gradient-primary-shimmer">{t.technology.sectionTitle2}</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             {t.technology.description}
@@ -91,14 +94,14 @@ export function TechnologyHighlights() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group"
             >
-              <div className="bg-background rounded-2xl p-5 md:p-8 border border-border hover:border-primary/50 transition-all duration-500 h-full card-lift overflow-hidden relative">
+              <div className="bg-card rounded-2xl p-5 md:p-8 border border-border hover:border-primary/50 transition-all duration-500 h-full card-lift overflow-hidden relative">
                 {/* Subtle inner glow */}
-                <div className="absolute inset-0 gradient-radial-gold opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none" />
+                <div className="absolute inset-0 gradient-radial-primary opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none" />
 
                 {/* Icon with glow effect */}
                 <div className="relative">
-                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl gradient-gold flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 group-hover:shadow-gold transition-all duration-500">
-                    <feature.icon className="w-6 h-6 md:w-7 md:h-7 text-black" />
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl gradient-primary flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 group-hover:shadow-blue transition-all duration-500">
+                    <feature.icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
                   </div>
                 </div>
 

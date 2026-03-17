@@ -20,7 +20,10 @@ export function FeaturedProducts({ products }: FeaturedProductsProps) {
   return (
     <section className="py-20 md:py-32 relative overflow-hidden">
       {/* Subtle background glow */}
-      <div className="absolute inset-0 gradient-radial-gold opacity-30 pointer-events-none" />
+      <div className="absolute inset-0 gradient-radial-primary opacity-30 pointer-events-none" />
+
+      {/* Section background */}
+      <div className="absolute inset-0 section-alt opacity-50" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
@@ -41,8 +44,8 @@ export function FeaturedProducts({ products }: FeaturedProductsProps) {
             <Sparkles className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium">{t.featuredProducts.sectionBadge}</span>
           </motion.div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            {t.featuredProducts.sectionTitle1}<span className="text-gradient-gold-shimmer">{t.featuredProducts.sectionTitle2}</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+            {t.featuredProducts.sectionTitle1}<span className="text-gradient-primary-shimmer">{t.featuredProducts.sectionTitle2}</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             {t.featuredProducts.description}
@@ -61,7 +64,7 @@ export function FeaturedProducts({ products }: FeaturedProductsProps) {
             >
               <Link href={`/products/${product.slug}`}>
                 <Card className="group overflow-hidden border-border bg-card hover:border-primary/50 transition-all duration-500 h-full card-lift">
-                  <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-secondary/50 to-secondary">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-accent/50 to-accent">
                     <Image
                       src={product.images[0]}
                       alt={product.name}
@@ -112,7 +115,7 @@ export function FeaturedProducts({ products }: FeaturedProductsProps) {
                       {product.tagline}
                     </p>
                     <div className="flex items-center justify-between">
-                      <span className="text-2xl font-bold text-gradient-gold">
+                      <span className="text-2xl font-bold text-gradient-primary">
                         ¥{product.price}
                       </span>
                       <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-all duration-300 transform group-hover:translate-x-2" />

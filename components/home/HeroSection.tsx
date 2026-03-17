@@ -13,10 +13,13 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
+      {/* Background Gradient Mesh */}
+      <div className="absolute inset-0 gradient-mesh opacity-50" />
 
-      {/* Animated Background Elements - Enhanced */}
+      {/* Subtle gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
+
+      {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Top-right orb */}
         <motion.div
@@ -29,7 +32,7 @@ export function HeroSection() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute -top-1/2 -right-1/4 w-full h-full gradient-metallic rounded-full blur-3xl opacity-20"
+          className="absolute -top-1/2 -right-1/4 w-full h-full bg-primary/10 rounded-full blur-3xl"
         />
         {/* Bottom-left orb */}
         <motion.div
@@ -43,7 +46,7 @@ export function HeroSection() {
             ease: "easeInOut",
             delay: 2,
           }}
-          className="absolute -bottom-1/2 -left-1/4 w-full h-full gradient-metallic rounded-full blur-3xl opacity-20"
+          className="absolute -bottom-1/2 -left-1/4 w-full h-full bg-accent/50 rounded-full blur-3xl"
         />
         {/* Center glow */}
         <motion.div
@@ -55,7 +58,7 @@ export function HeroSection() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] gradient-radial-gold rounded-full blur-2xl"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] gradient-radial-primary rounded-full blur-2xl"
         />
       </div>
 
@@ -67,10 +70,10 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/80 backdrop-blur-sm border border-border mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border mb-6 shadow-sm"
           >
             <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium">{t.hero.badge}</span>
+            <span className="text-sm font-medium text-foreground">{t.hero.badge}</span>
           </motion.div>
 
           {/* Main heading */}
@@ -78,10 +81,10 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 text-foreground"
           >
             {t.hero.title1}
-            <span className="block text-gradient-gold-shimmer">{t.hero.title2}</span>
+            <span className="block text-gradient-primary-shimmer">{t.hero.title2}</span>
           </motion.h1>
 
           {/* Description */}
@@ -106,7 +109,7 @@ export function HeroSection() {
             <a href={BUY_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex">
               <Button
                 size="lg"
-                className="gradient-gold text-black h-12 px-8 text-base shadow-lg hover:shadow-gold-lg transition-all duration-300"
+                className="gradient-primary text-white h-12 px-8 text-base shadow-lg hover:shadow-blue-lg btn-glow transition-all duration-300"
               >
                 {t.hero.buyNow}
                 <ArrowRight className="ml-2" />
@@ -116,7 +119,7 @@ export function HeroSection() {
               <Button
                 size="lg"
                 variant="outline"
-                className="h-12 px-8 text-base border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
+                className="h-12 px-8 text-base border-border hover:border-primary/50 hover:bg-accent transition-all duration-300 text-foreground"
               >
                 {t.hero.viewProducts}
               </Button>
@@ -134,7 +137,7 @@ export function HeroSection() {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="w-6 h-10 rounded-full border-2 border-muted-foreground/50 flex items-start justify-center p-2"
+            className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-2"
           >
             <motion.div className="w-1 h-2 bg-muted-foreground rounded-full" />
           </motion.div>

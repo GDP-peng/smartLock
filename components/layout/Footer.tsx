@@ -23,9 +23,9 @@ export function Footer() {
   }
 
   return (
-    <footer className="border-t border-border bg-card relative overflow-hidden">
+    <footer className="border-t border-border bg-background relative overflow-hidden">
       {/* Subtle background glow */}
-      <div className="absolute inset-0 gradient-radial-gold opacity-10 pointer-events-none" />
+      <div className="absolute inset-0 gradient-radial-primary opacity-10 pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 relative">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">

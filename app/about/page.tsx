@@ -53,7 +53,7 @@ export default function AboutPage() {
           className="max-w-3xl"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            {t.aboutPage.title1} <span className="text-gradient-gold">{t.aboutPage.title2}</span>
+            {t.aboutPage.title1} <span className="text-gradient-primary-shimmer">{t.aboutPage.title2}</span>
           </h1>
           <p className="text-lg text-muted-foreground">
             {t.aboutPage.description}
@@ -72,7 +72,7 @@ export default function AboutPage() {
               transition={{ delay: index * 0.1, duration: 0.5 }}
               className="text-center"
             >
-              <div className="text-4xl md:text-5xl font-bold text-gradient-gold mb-2">
+              <div className="text-4xl md:text-5xl font-bold text-gradient-primary-shimmer mb-2">
                 {stat.value}
               </div>
               <div className="text-muted-foreground">{stat.label}</div>
@@ -105,8 +105,8 @@ export default function AboutPage() {
             >
               <Card className="h-full border-border bg-card">
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 rounded-lg gradient-gold flex items-center justify-center mb-4">
-                    <value.icon className="w-6 h-6 text-black" />
+                  <div className="w-12 h-12 rounded-lg gradient-primary flex items-center justify-center mb-4">
+                    <value.icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
                   <p className="text-muted-foreground">{value.description}</p>
@@ -167,7 +167,7 @@ export default function AboutPage() {
               {t.aboutPage.cta.description}
             </p>
             <Link href="/products">
-              <Button size="lg" className="gradient-gold text-black">
+              <Button size="lg" className="gradient-primary text-white">
                 {t.aboutPage.cta.button}
               </Button>
             </Link>

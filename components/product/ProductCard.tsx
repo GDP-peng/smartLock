@@ -28,7 +28,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
     >
       <Link href={`/products/${product.slug}`}>
         <Card className="group overflow-hidden border-border bg-card hover:border-primary/50 transition-all duration-500 h-full card-lift">
-          <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-secondary/80 to-secondary/50">
+          <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-accent/50 to-accent">
             {/* Loading skeleton */}
             {!isImageLoaded && (
               <div className="absolute inset-0 image-loading" />
@@ -89,7 +89,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
               {product.tagline}
             </p>
             <div className="flex items-center justify-between">
-              <span className="text-2xl font-bold text-gradient-gold">
+              <span className="text-2xl font-bold text-gradient-primary">
                 ¥{product.price}
               </span>
               <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-all duration-300 transform group-hover:translate-x-2" />

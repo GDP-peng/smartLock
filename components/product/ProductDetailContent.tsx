@@ -105,11 +105,11 @@ export function ProductDetailContent({ product }: ProductDetailContentProps) {
             className="p-8 rounded-2xl bg-card border border-border shadow-xl relative overflow-hidden"
           >
             {/* Subtle inner glow */}
-            <div className="absolute inset-0 gradient-radial-gold opacity-20 pointer-events-none" />
+            <div className="absolute inset-0 gradient-radial-primary opacity-20 pointer-events-none" />
 
             <div className="relative z-10">
               <div className="flex items-baseline gap-2 mb-6">
-                <span className="text-5xl font-bold text-gradient-gold">¥{product.price}</span>
+                <span className="text-5xl font-bold text-gradient-primary">¥{product.price}</span>
               </div>
 
               {/* Benefits */}
@@ -122,7 +122,7 @@ export function ProductDetailContent({ product }: ProductDetailContentProps) {
                     transition={{ delay: 0.5 + index * 0.1 }}
                     className="flex items-center gap-3 text-sm"
                   >
-                    <div className="w-8 h-8 rounded-full gradient-gold/20 flex items-center justify-center">
+                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
                       <benefit.icon className="w-4 h-4 text-primary" />
                     </div>
                     <span>{benefit.text}</span>
@@ -137,7 +137,7 @@ export function ProductDetailContent({ product }: ProductDetailContentProps) {
                 className="block"
               >
                 <Button
-                  className="w-full gradient-gold text-black h-14 text-lg shadow-lg hover:shadow-gold-lg transition-all duration-300"
+                  className="w-full gradient-primary text-white h-14 text-lg shadow-lg hover:shadow-blue-lg btn-glow transition-all duration-300"
                   size="lg"
                 >
                   {t.productDetail.buyNow}
@@ -169,7 +169,7 @@ export function ProductDetailContent({ product }: ProductDetailContentProps) {
         transition={{ duration: 0.5 }}
       >
         <h2 className="text-3xl font-bold mb-8 flex items-center gap-2">
-          <span className="flex items-center justify-center w-8 h-8 rounded-full gradient-gold/20">
+          <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10">
             <span className="text-primary text-sm">✓</span>
           </span>
           {t.productDetail.specifications}

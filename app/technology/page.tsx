@@ -63,7 +63,7 @@ export default function TechnologyPage() {
           <span className="text-primary text-sm font-medium mb-2 block">{t.technologyPage.badge}</span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             {t.technologyPage.title1}
-            <span className="block text-gradient-gold">{t.technologyPage.title2}</span>
+            <span className="block text-gradient-primary-shimmer">{t.technologyPage.title2}</span>
           </h1>
           <p className="text-lg text-muted-foreground">
             {t.technologyPage.description}
@@ -84,8 +84,8 @@ export default function TechnologyPage() {
               <Card className="h-full border-border bg-card hover:border-primary/50 transition-colors">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 rounded-lg gradient-gold flex items-center justify-center">
-                      <tech.icon className="w-6 h-6 text-black" />
+                    <div className="w-12 h-12 rounded-lg gradient-primary flex items-center justify-center">
+                      <tech.icon className="w-6 h-6 text-white" />
                     </div>
                     <Badge variant="outline" className="font-mono">
                       {tech.stats}
@@ -138,7 +138,7 @@ export default function TechnologyPage() {
               </div>
 
               {/* Timeline Dot */}
-              <div className="absolute left-0 md:left-1/2 w-4 h-4 rounded-full gradient-gold transform -translate-x-1/2 md:-translate-x-1/2 z-10" />
+              <div className="absolute left-0 md:left-1/2 w-4 h-4 rounded-full gradient-primary transform -translate-x-1/2 md:-translate-x-1/2 z-10" />
             </motion.div>
           ))}
         </div>

@@ -54,7 +54,7 @@ export function BrandPhilosophy() {
   ]
 
   return (
-    <section className="py-20 md:py-32 bg-card relative overflow-hidden">
+    <section className="py-20 md:py-32 bg-background relative overflow-hidden">
       {/* Background Pattern - Enhanced */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -63,8 +63,11 @@ export function BrandPhilosophy() {
         }} />
       </div>
 
+      {/* Section background */}
+      <div className="absolute inset-0 section-alt opacity-100" />
+
       {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 gradient-radial-gold opacity-20 pointer-events-none" />
+      <div className="absolute inset-0 gradient-radial-primary opacity-20 pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
@@ -85,8 +88,8 @@ export function BrandPhilosophy() {
             <Trophy className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium">{t.brand.aboutBadge}</span>
           </motion.div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            {t.brand.sectionTitle1} <span className="text-gradient-gold-shimmer">{t.brand.sectionTitle2}</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+            {t.brand.sectionTitle1} <span className="text-gradient-primary-shimmer">{t.brand.sectionTitle2}</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             {t.brand.description}
@@ -105,11 +108,11 @@ export function BrandPhilosophy() {
               className="text-center group"
             >
               {/* Icon with enhanced glow effect */}
-              <div className="w-10 h-10 md:w-14 md:h-14 rounded-xl gradient-gold flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:scale-110 group-hover:shadow-gold transition-all duration-500">
-                <stat.icon className="w-5 h-5 md:w-7 md:h-7 text-black" />
+              <div className="w-10 h-10 md:w-14 md:h-14 rounded-xl gradient-primary flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:scale-110 group-hover:shadow-blue transition-all duration-500">
+                <stat.icon className="w-5 h-5 md:w-7 md:h-7 text-white" />
               </div>
               {/* Value */}
-              <div className="text-3xl md:text-5xl font-bold text-gradient-gold mb-1 md:mb-2 group-hover:scale-105 transition-transform duration-300">
+              <div className="text-3xl md:text-5xl font-bold text-gradient-primary mb-1 md:mb-2 group-hover:scale-105 transition-transform duration-300">
                 {stat.value}
               </div>
               <p className="text-xs md:text-sm text-muted-foreground">{stat.label}</p>
@@ -128,14 +131,14 @@ export function BrandPhilosophy() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group"
             >
-              <div className="bg-background rounded-2xl p-6 border border-border hover:border-primary/50 transition-all duration-500 h-full card-lift overflow-hidden relative">
+              <div className="bg-card rounded-2xl p-6 border border-border hover:border-primary/50 transition-all duration-500 h-full card-lift overflow-hidden relative">
                 {/* Subtle inner glow on hover */}
-                <div className="absolute inset-0 gradient-radial-gold opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none" />
+                <div className="absolute inset-0 gradient-radial-primary opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none" />
 
                 {/* Icon */}
                 <div className="relative">
-                  <div className="w-12 h-12 rounded-lg gradient-gold flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-gold transition-all duration-500">
-                    <value.icon className="w-6 h-6 text-black" />
+                  <div className="w-12 h-12 rounded-lg gradient-primary flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-blue transition-all duration-500">
+                    <value.icon className="w-6 h-6 text-white" />
                   </div>
                 </div>
 

@@ -21,7 +21,7 @@ export function ProductSpecs({ specifications }: ProductSpecsProps) {
           transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
         >
           <Card className="border-border bg-card overflow-hidden">
-            <CardHeader className="pb-4 bg-secondary/30 border-b border-border">
+            <CardHeader className="pb-4 bg-accent/50 border-b border-border">
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-5 h-5 text-primary" />
                 <CardTitle className="text-lg font-semibold text-primary">
@@ -38,7 +38,7 @@ export function ProductSpecs({ specifications }: ProductSpecsProps) {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: categoryIndex * 0.1 + specIndex * 0.05 }}
-                    className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1 py-2 border-b border-border last:border-0 hover:bg-secondary/20 rounded px-2 -mx-2 transition-colors duration-200"
+                    className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1 py-2 border-b border-border last:border-0 hover:bg-accent/50 rounded px-2 -mx-2 transition-colors duration-200"
                   >
                     <dt className="text-sm text-muted-foreground font-medium">
                       {spec.name}
