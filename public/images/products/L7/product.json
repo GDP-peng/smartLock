@@ -2,27 +2,22 @@
   "slug": "l7",
   "name": "L7",
   "series": "经典系列",
-  "tagline": "静音锁体 舒适体验",
+  "tagline": "高端智能锁 L7型号",
   "price": 1480,
   "published": true,
   "isFeatured": false,
   "isNew": true,
   "images": [
-    "/images/products/L7/1.jpg",
-    "/images/products/L7/slider_1.jpg",
-    "/images/products/L7/slider_2.jpg",
-    "/images/products/L7/slider_3.jpg"
+    "/images/products/L7/01-covers/main_1.jpg",
+    "/images/products/L7/02-slider/main_1.jpg",
+    "/images/products/L7/02-slider/main_2.jpg",
+    "/images/products/L7/02-slider/main_3.jpg"
   ],
   "detailImages": [
-    "/images/products/L7/detail_1.jpg"
+    "/images/products/L7/03-details/1.jpg"
   ],
   "video": null,
   "features": [
-    {
-      "icon": "monitor",
-      "title": "可视对讲",
-      "description": "远程视频对讲，随时查看门外情况。"
-    },
     {
       "icon": "fingerprint",
       "title": "指纹识别",
@@ -89,10 +84,6 @@
         {
           "name": "面板材质",
           "value": "铝合金/CNC 精雕"
-        },
-        {
-          "name": "表面处理",
-          "value": "磨砂黑/拉丝银"
         },
         {
           "name": "适用门厚",

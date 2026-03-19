@@ -1,30 +1,25 @@
 {
   "slug": "t3",
   "name": "T3",
-  "series": "推拉系列",
-  "tagline": "全自动推拉 一握即开",
-  "price": 1680,
+  "series": "高端系列",
+  "tagline": "高端智能锁 T3型号",
+  "price": 1880,
   "published": true,
-  "isFeatured": false,
+  "isFeatured": true,
   "isNew": true,
   "images": [
-    "/images/products/T3/1.jpg",
-    "/images/products/T3/slider_1.jpg",
-    "/images/products/T3/slider_2.jpg",
-    "/images/products/T3/slider_3.jpg"
+    "/images/products/T3/01-covers/1.jpg",
+    "/images/products/T3/02-slider/1.jpg",
+    "/images/products/T3/02-slider/2.jpg",
+    "/images/products/T3/02-slider/3.jpg"
   ],
   "detailImages": [
-    "/images/products/T3/detail_1.jpg",
-    "/images/products/T3/detail_2.jpg",
-    "/images/products/T3/detail_3.jpg"
+    "/images/products/T3/03-details/1.jpg",
+    "/images/products/T3/03-details/2.jpg",
+    "/images/products/T3/03-details/3.jpg"
   ],
   "video": null,
   "features": [
-    {
-      "icon": "monitor",
-      "title": "可视对讲",
-      "description": "远程视频对讲，随时查看门外情况。"
-    },
     {
       "icon": "fingerprint",
       "title": "指纹识别",
@@ -91,10 +86,6 @@
         {
           "name": "面板材质",
           "value": "铝合金/CNC 精雕"
-        },
-        {
-          "name": "表面处理",
-          "value": "磨砂黑/拉丝银"
         },
         {
           "name": "适用门厚",

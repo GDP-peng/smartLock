@@ -1,0 +1,108 @@
+{
+  "slug": "mate20",
+  "name": "Mate20",
+  "series": "旗舰系列",
+  "tagline": "高端智能锁 Mate20型号",
+  "price": 3280,
+  "published": true,
+  "isFeatured": true,
+  "isNew": true,
+  "images": [
+    "/images/products/Mate20/01-covers/black_1.png",
+    "/images/products/Mate20/02-slider/black_1.png",
+    "/images/products/Mate20/02-slider/black_2.png",
+    "/images/products/Mate20/02-slider/black_3.png",
+    "/images/products/Mate20/02-slider/gold_1.png",
+    "/images/products/Mate20/02-slider/gold_2.png",
+    "/images/products/Mate20/02-slider/gold_3.png"
+  ],
+  "detailImages": [
+    "/images/products/Mate20/03-details/1.jpg",
+    "/images/products/Mate20/03-details/10.jpg",
+    "/images/products/Mate20/03-details/11.jpg",
+    "/images/products/Mate20/03-details/2.jpg",
+    "/images/products/Mate20/03-details/3.jpg",
+    "/images/products/Mate20/03-details/4.jpg",
+    "/images/products/Mate20/03-details/5.jpg",
+    "/images/products/Mate20/03-details/6.jpg",
+    "/images/products/Mate20/03-details/7.jpg",
+    "/images/products/Mate20/03-details/8.jpg",
+    "/images/products/Mate20/03-details/9.jpg"
+  ],
+  "video": "/images/products/Mate20/04-vedio/introduction.mp4",
+  "features": [
+    {
+      "icon": "fingerprint",
+      "title": "指纹识别",
+      "description": "半导体指纹识别，0.5 秒快速开锁。"
+    },
+    {
+      "icon": "lock",
+      "title": "多种开锁方式",
+      "description": "支持指纹、密码、IC 卡、钥匙等多种开锁方式。"
+    },
+    {
+      "icon": "wifi",
+      "title": "智能连接",
+      "description": "支持 WiFi 连接，手机 APP 远程控制。"
+    },
+    {
+      "icon": "battery",
+      "title": "长续航",
+      "description": "大容量锂电池，续航 6-12 个月。"
+    }
+  ],
+  "specifications": [
+    {
+      "category": "安全性能",
+      "specs": [
+        {
+          "name": "锁芯等级",
+          "value": "C 级锁芯"
+        },
+        {
+          "name": "指纹容量",
+          "value": "100 枚"
+        },
+        {
+          "name": "密码容量",
+          "value": "100 组"
+        },
+        {
+          "name": "IC 卡容量",
+          "value": "100 张"
+        }
+      ]
+    },
+    {
+      "category": "电源续航",
+      "specs": [
+        {
+          "name": "电池类型",
+          "value": "锂电池"
+        },
+        {
+          "name": "续航时间",
+          "value": "6-12 个月"
+        },
+        {
+          "name": "应急供电",
+          "value": "Type-C"
+        }
+      ]
+    },
+    {
+      "category": "物理规格",
+      "specs": [
+        {
+          "name": "面板材质",
+          "value": "铝合金/CNC 精雕"
+        },
+        {
+          "name": "适用门厚",
+          "value": "40-120mm"
+        }
+      ]
+    }
+  ]
+}

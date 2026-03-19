@@ -28,7 +28,7 @@ export default function RootLayout({
         <ThemeProviderScript />
       </head>
       <body className="antialiased min-h-screen bg-background text-foreground">
-        <ThemeProvider defaultTheme="light" storageKey="smartlock-theme">
+        <ThemeProvider defaultTheme="dark" storageKey="smartlock-theme">
           <LanguageProvider>
             <Header />
             <main className="flex-1">{children}</main>

@@ -11,13 +11,23 @@ import type { Product } from "@/types/product";
  */
 
 // 产品目录列表 (按此顺序展示)
-const PRODUCT_SLUGS = ["A20", "A30", "A40", "L1", "L2", "L3", "L4", "L5", "L6", "L7", "L9", "T3", "V70", "X1", "mate10", "mate20"] as const;
+const PRODUCT_SLUGS = [
+  "V70", "X1", "Mate10", "Mate20",  // 旗舰/高端系列
+  "A20", "A30", "A40",               // AI 智能系列
+  "T3",                              // 高端系列
+  "L1", "L2", "L3", "L4", "L5", "L6", "L7", "L9"  // 经典系列
+] as const;
 
 // 预导入所有产品配置 (Next.js 需要静态路径)
 const productConfigs: Record<string, ProductConfig> = {
+  V70: require("../../public/images/products/V70/product.json"),
+  X1: require("../../public/images/products/X1/product.json"),
+  Mate10: require("../../public/images/products/Mate10/product.json"),
+  Mate20: require("../../public/images/products/Mate20/product.json"),
   A20: require("../../public/images/products/A20/product.json"),
   A30: require("../../public/images/products/A30/product.json"),
   A40: require("../../public/images/products/A40/product.json"),
+  T3: require("../../public/images/products/T3/product.json"),
   L1: require("../../public/images/products/L1/product.json"),
   L2: require("../../public/images/products/L2/product.json"),
   L3: require("../../public/images/products/L3/product.json"),
@@ -26,35 +36,59 @@ const productConfigs: Record<string, ProductConfig> = {
   L6: require("../../public/images/products/L6/product.json"),
   L7: require("../../public/images/products/L7/product.json"),
   L9: require("../../public/images/products/L9/product.json"),
-  T3: require("../../public/images/products/T3/product.json"),
-  V70: require("../../public/images/products/V70/product.json"),
-  X1: require("../../public/images/products/X1/product.json"),
-  mate10: require("../../public/images/products/mate10/product.json"),
-  mate20: require("../../public/images/products/mate20/product.json"),
 };
 
 /**
- * 生成默认主图路径
+ * 生成默认主图路径 (支持新结构：01-covers, 02-slider)
  */
 function generateDefaultImages(slug: string): string[] {
   const imageDir = `/images/products/${slug}`;
 
   // 特殊处理 Mate10 (使用 png)
   if (slug === "Mate10") {
-    return [`${imageDir}/1.png`, `${imageDir}/2.png`];
+    return [
+      `${imageDir}/01-covers/1.png`,
+      `${imageDir}/01-covers/2.png`,
+      `${imageDir}/02-slider/1.png`,
+      `${imageDir}/02-slider/2.png`
+    ];
   }
 
   // 特殊处理 Mate20 (特殊命名)
   if (slug === "Mate20") {
-    return [`${imageDir}/hei1.png`, `${imageDir}/jin1.png`, `${imageDir}/hei2.png`];
+    return [
+      `${imageDir}/01-covers/hei1.png`,
+      `${imageDir}/01-covers/jin1.png`,
+      `${imageDir}/02-slider/hei2.png`
+    ];
   }
 
-  // 默认使用 1.jpg, 2.jpg, 3.jpg
-  return [`${imageDir}/1.jpg`, `${imageDir}/2.jpg`, `${imageDir}/3.jpg`];
+  // 默认使用 01-covers 和 02-slider 文件夹
+  const images: string[] = [];
+
+  // 尝试从 01-covers 获取
+  for (let i = 1; i <= 5; i++) {
+    images.push(`${imageDir}/01-covers/${i}.jpg`);
+    images.push(`${imageDir}/01-covers/${i}.png`);
+  }
+
+  // 尝试从 02-slider 获取
+  for (let i = 1; i <= 10; i++) {
+    images.push(`${imageDir}/02-slider/${i}.jpg`);
+    images.push(`${imageDir}/02-slider/${i}.png`);
+  }
+
+  // 回退到旧的命名方式
+  for (let i = 1; i <= 3; i++) {
+    images.push(`${imageDir}/${i}.jpg`);
+    images.push(`${imageDir}/${i}.png`);
+  }
+
+  return images;
 }
 
 /**
- * 生成默认详情图路径
+ * 生成默认详情图路径 (支持新结构：03-details)
  */
 function generateDefaultDetailImages(slug: string): string[] {
   const imageDir = `/images/products/${slug}`;
@@ -62,8 +96,8 @@ function generateDefaultDetailImages(slug: string): string[] {
 
   // 特殊处理 Mate10
   if (slug === "Mate10") {
-    for (let i = 3; i <= 11; i++) {
-      detailImages.push(`${imageDir}/${i}.${i <= 3 ? "png" : "jpg"}`);
+    for (let i = 1; i <= 11; i++) {
+      detailImages.push(`${imageDir}/03-details/${i}.${i <= 2 ? "png" : "jpg"}`);
     }
     return detailImages;
   }
@@ -71,15 +105,28 @@ function generateDefaultDetailImages(slug: string): string[] {
   // 特殊处理 Mate20
   if (slug === "Mate20") {
     for (let i = 1; i <= 11; i++) {
-      detailImages.push(`${imageDir}/${i}.jpg`);
+      detailImages.push(`${imageDir}/03-details/${i}.jpg`);
     }
     return detailImages;
   }
 
-  // 默认使用 4.jpg - 12.jpg
+  // 默认使用 03-details 文件夹
+  for (let i = 1; i <= 30; i++) {
+    detailImages.push(`${imageDir}/03-details/${i}.jpg`);
+    detailImages.push(`${imageDir}/03-details/${i}.png`);
+  }
+
+  // 回退到旧的命名方式 (detail_1.jpg, detail_2.jpg, etc.)
+  for (let i = 1; i <= 20; i++) {
+    detailImages.push(`${imageDir}/detail_${i}.jpg`);
+    detailImages.push(`${imageDir}/detail_${i}.png`);
+  }
+
+  // 回退到 4.jpg - 12.jpg 旧格式
   for (let i = 4; i <= 12; i++) {
     detailImages.push(`${imageDir}/${i}.jpg`);
   }
+
   return detailImages;
 }
 

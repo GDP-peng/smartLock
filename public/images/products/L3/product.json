@@ -2,34 +2,29 @@
   "slug": "l3",
   "name": "L3",
   "series": "经典系列",
-  "tagline": "锌合金面板 多种开锁方式",
+  "tagline": "高端智能锁 L3型号",
   "price": 1080,
   "published": true,
   "isFeatured": false,
   "isNew": true,
   "images": [
-    "/images/products/L3/1.jpg",
-    "/images/products/L3/slider_1.jpg",
-    "/images/products/L3/slider_2.jpg",
-    "/images/products/L3/slider_3.png",
-    "/images/products/L3/slider_4.jpg"
+    "/images/products/L3/01-covers/main_1.jpg",
+    "/images/products/L3/02-slider/main_1.jpg",
+    "/images/products/L3/02-slider/main_2.jpg",
+    "/images/products/L3/02-slider/main_3.png",
+    "/images/products/L3/02-slider/main_4.jpg"
   ],
   "detailImages": [
-    "/images/products/L3/detail_1.jpg",
-    "/images/products/L3/detail_2.jpg",
-    "/images/products/L3/detail_3.jpg",
-    "/images/products/L3/detail_4.jpg",
-    "/images/products/L3/detail_5.jpg",
-    "/images/products/L3/detail_6.jpg",
-    "/images/products/L3/detail_7.jpg"
+    "/images/products/L3/03-details/1.jpg",
+    "/images/products/L3/03-details/2.jpg",
+    "/images/products/L3/03-details/3.jpg",
+    "/images/products/L3/03-details/4.jpg",
+    "/images/products/L3/03-details/5.jpg",
+    "/images/products/L3/03-details/6.jpg",
+    "/images/products/L3/03-details/7.jpg"
   ],
   "video": null,
   "features": [
-    {
-      "icon": "monitor",
-      "title": "可视对讲",
-      "description": "远程视频对讲，随时查看门外情况。"
-    },
     {
       "icon": "fingerprint",
       "title": "指纹识别",
@@ -96,10 +91,6 @@
         {
           "name": "面板材质",
           "value": "铝合金/CNC 精雕"
-        },
-        {
-          "name": "表面处理",
-          "value": "磨砂黑/拉丝银"
         },
         {
           "name": "适用门厚",

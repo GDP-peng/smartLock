@@ -1,34 +1,29 @@
 {
   "slug": "v70",
   "name": "V70",
-  "series": "视频锁系列",
-  "tagline": "可视对讲 远程监控",
-  "price": 1780,
+  "series": "高端系列",
+  "tagline": "高端智能锁 V70型号",
+  "price": 2280,
   "published": true,
-  "isFeatured": false,
+  "isFeatured": true,
   "isNew": true,
   "images": [
-    "/images/products/V70/1.jpg",
-    "/images/products/V70/slider_1.jpg",
-    "/images/products/V70/slider_2.jpg",
-    "/images/products/V70/slider_3.jpg",
-    "/images/products/V70/slider_4.jpg",
-    "/images/products/V70/slider_5.jpg",
-    "/images/products/V70/slider_6.jpg"
+    "/images/products/V70/01-covers/1.jpg",
+    "/images/products/V70/02-slider/1.jpg",
+    "/images/products/V70/02-slider/2.jpg",
+    "/images/products/V70/02-slider/3.jpg",
+    "/images/products/V70/02-slider/4.jpg",
+    "/images/products/V70/02-slider/5.jpg",
+    "/images/products/V70/02-slider/6.jpg"
   ],
   "detailImages": [
-    "/images/products/V70/detail_1.jpg",
-    "/images/products/V70/detail_2.jpg",
-    "/images/products/V70/detail_3.jpg",
-    "/images/products/V70/detail_4.jpg"
+    "/images/products/V70/03-details/1.jpg",
+    "/images/products/V70/03-details/2.jpg",
+    "/images/products/V70/03-details/3.jpg",
+    "/images/products/V70/03-details/4.jpg"
   ],
   "video": null,
   "features": [
-    {
-      "icon": "monitor",
-      "title": "可视对讲",
-      "description": "远程视频对讲，随时查看门外情况。"
-    },
     {
       "icon": "fingerprint",
       "title": "指纹识别",
@@ -95,10 +90,6 @@
         {
           "name": "面板材质",
           "value": "铝合金/CNC 精雕"
-        },
-        {
-          "name": "表面处理",
-          "value": "磨砂黑/拉丝银"
         },
         {
           "name": "适用门厚",

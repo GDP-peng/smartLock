@@ -2,39 +2,34 @@
   "slug": "a40",
   "name": "A40",
   "series": "AI 智能系列",
-  "tagline": "旗舰配置 双摄监控 AI 语音",
+  "tagline": "高端智能锁 A40型号",
   "price": 1880,
   "published": true,
   "isFeatured": true,
   "isNew": true,
   "images": [
-    "/images/products/A40/1.png",
-    "/images/products/A40/slider_1.png",
-    "/images/products/A40/slider_2.jpg",
-    "/images/products/A40/slider_3.jpg",
-    "/images/products/A40/slider_4.jpg"
+    "/images/products/A40/01-covers/1.png",
+    "/images/products/A40/02-slider/1.png",
+    "/images/products/A40/02-slider/2.jpg",
+    "/images/products/A40/02-slider/3.jpg",
+    "/images/products/A40/02-slider/4.jpg"
   ],
   "detailImages": [
-    "/images/products/A40/detail_1.jpg",
-    "/images/products/A40/detail_2.jpg",
-    "/images/products/A40/detail_3.jpg",
-    "/images/products/A40/detail_4.jpg",
-    "/images/products/A40/detail_5.jpg",
-    "/images/products/A40/detail_6.jpg",
-    "/images/products/A40/detail_7.jpg",
-    "/images/products/A40/detail_8.jpg",
-    "/images/products/A40/detail_9.jpg",
-    "/images/products/A40/detail_10.jpg",
-    "/images/products/A40/detail_11.jpg",
-    "/images/products/A40/detail_12.jpg"
+    "/images/products/A40/03-details/1.jpg",
+    "/images/products/A40/03-details/10.jpg",
+    "/images/products/A40/03-details/11.jpg",
+    "/images/products/A40/03-details/12.jpg",
+    "/images/products/A40/03-details/13.jpg",
+    "/images/products/A40/03-details/2.jpg",
+    "/images/products/A40/03-details/3.jpg",
+    "/images/products/A40/03-details/4.jpg",
+    "/images/products/A40/03-details/5.jpg",
+    "/images/products/A40/03-details/7.jpg",
+    "/images/products/A40/03-details/8.jpg",
+    "/images/products/A40/03-details/9.jpg"
   ],
-  "video": "/images/products/A40/video.mp4",
+  "video": "/images/products/A40/04-vedio/A40.mp4",
   "features": [
-    {
-      "icon": "monitor",
-      "title": "可视对讲",
-      "description": "远程视频对讲，随时查看门外情况。"
-    },
     {
       "icon": "fingerprint",
       "title": "指纹识别",
@@ -101,10 +96,6 @@
         {
           "name": "面板材质",
           "value": "铝合金/CNC 精雕"
-        },
-        {
-          "name": "表面处理",
-          "value": "磨砂黑/拉丝银"
         },
         {
           "name": "适用门厚",

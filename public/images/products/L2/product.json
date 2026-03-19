@@ -2,32 +2,27 @@
   "slug": "l2",
   "name": "L2",
   "series": "经典系列",
-  "tagline": "CNC 精雕 防撬报警",
+  "tagline": "高端智能锁 L2型号",
   "price": 980,
   "published": true,
   "isFeatured": false,
   "isNew": true,
   "images": [
-    "/images/products/L2/1.jpg",
-    "/images/products/L2/slider_1.jpg",
-    "/images/products/L2/slider_2.jpg",
-    "/images/products/L2/slider_3.jpg",
-    "/images/products/L2/slider_4.jpg"
+    "/images/products/L2/01-covers/main_1.jpg",
+    "/images/products/L2/02-slider/main_1.jpg",
+    "/images/products/L2/02-slider/main_2.jpg",
+    "/images/products/L2/02-slider/main_3.jpg",
+    "/images/products/L2/02-slider/main_4.jpg"
   ],
   "detailImages": [
-    "/images/products/L2/detail_1.jpg",
-    "/images/products/L2/detail_2.jpg",
-    "/images/products/L2/detail_3.jpg",
-    "/images/products/L2/detail_4.jpg",
-    "/images/products/L2/detail_5.jpg"
+    "/images/products/L2/03-details/1.jpg",
+    "/images/products/L2/03-details/2.jpg",
+    "/images/products/L2/03-details/3.jpg",
+    "/images/products/L2/03-details/4.jpg",
+    "/images/products/L2/03-details/5.jpg"
   ],
   "video": null,
   "features": [
-    {
-      "icon": "monitor",
-      "title": "可视对讲",
-      "description": "远程视频对讲，随时查看门外情况。"
-    },
     {
       "icon": "fingerprint",
       "title": "指纹识别",
@@ -94,10 +89,6 @@
         {
           "name": "面板材质",
           "value": "铝合金/CNC 精雕"
-        },
-        {
-          "name": "表面处理",
-          "value": "磨砂黑/拉丝银"
         },
         {
           "name": "适用门厚",
