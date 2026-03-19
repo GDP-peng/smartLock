@@ -1,0 +1,130 @@
+{
+  "slug": "x1",
+  "name": "X1",
+  "series": "高端系列",
+  "tagline": "旗舰配置 奢华体验",
+  "price": 1980,
+  "published": true,
+  "isFeatured": false,
+  "isNew": true,
+  "images": [
+    "/images/products/X1/1.jpg",
+    "/images/products/X1/slider_1.png",
+    "/images/products/X1/slider_2.png",
+    "/images/products/X1/slider_3.png",
+    "/images/products/X1/slider_4.png",
+    "/images/products/X1/slider_5.png"
+  ],
+  "detailImages": [
+    "/images/products/X1/detail_1.jpg",
+    "/images/products/X1/detail_2.jpg",
+    "/images/products/X1/detail_3.jpg",
+    "/images/products/X1/detail_4.jpg",
+    "/images/products/X1/detail_5.jpg",
+    "/images/products/X1/detail_6.jpg",
+    "/images/products/X1/detail_7.jpg",
+    "/images/products/X1/detail_8.jpg",
+    "/images/products/X1/detail_9.jpg",
+    "/images/products/X1/detail_10.jpg",
+    "/images/products/X1/detail_11.jpg",
+    "/images/products/X1/detail_12.jpg",
+    "/images/products/X1/detail_13.jpg",
+    "/images/products/X1/detail_14.jpg",
+    "/images/products/X1/detail_15.jpg",
+    "/images/products/X1/detail_16.jpg",
+    "/images/products/X1/detail_17.jpg",
+    "/images/products/X1/detail_18.jpg",
+    "/images/products/X1/detail_19.jpg",
+    "/images/products/X1/detail_20.jpg",
+    "/images/products/X1/detail_21.jpg",
+    "/images/products/X1/detail_22.jpg",
+    "/images/products/X1/detail_23.jpg",
+    "/images/products/X1/detail_24.jpg",
+    "/images/products/X1/detail_25.jpg"
+  ],
+  "video": null,
+  "features": [
+    {
+      "icon": "monitor",
+      "title": "可视对讲",
+      "description": "远程视频对讲，随时查看门外情况。"
+    },
+    {
+      "icon": "fingerprint",
+      "title": "指纹识别",
+      "description": "半导体指纹识别，0.5 秒快速开锁。"
+    },
+    {
+      "icon": "lock",
+      "title": "多种开锁方式",
+      "description": "支持指纹、密码、IC 卡、钥匙等多种开锁方式。"
+    },
+    {
+      "icon": "wifi",
+      "title": "智能连接",
+      "description": "支持 WiFi 连接，手机 APP 远程控制。"
+    },
+    {
+      "icon": "battery",
+      "title": "长续航",
+      "description": "大容量锂电池，续航 6-12 个月。"
+    }
+  ],
+  "specifications": [
+    {
+      "category": "安全性能",
+      "specs": [
+        {
+          "name": "锁芯等级",
+          "value": "C 级锁芯"
+        },
+        {
+          "name": "指纹容量",
+          "value": "100 枚"
+        },
+        {
+          "name": "密码容量",
+          "value": "100 组"
+        },
+        {
+          "name": "IC 卡容量",
+          "value": "100 张"
+        }
+      ]
+    },
+    {
+      "category": "电源续航",
+      "specs": [
+        {
+          "name": "电池类型",
+          "value": "锂电池"
+        },
+        {
+          "name": "续航时间",
+          "value": "6-12 个月"
+        },
+        {
+          "name": "应急供电",
+          "value": "Type-C"
+        }
+      ]
+    },
+    {
+      "category": "物理规格",
+      "specs": [
+        {
+          "name": "面板材质",
+          "value": "铝合金/CNC 精雕"
+        },
+        {
+          "name": "表面处理",
+          "value": "磨砂黑/拉丝银"
+        },
+        {
+          "name": "适用门厚",
+          "value": "40-120mm"
+        }
+      ]
+    }
+  ]
+}

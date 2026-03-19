@@ -1,0 +1,105 @@
+{
+  "slug": "l6",
+  "name": "L6",
+  "series": "经典系列",
+  "tagline": "高安全等级 C 级锁芯",
+  "price": 1380,
+  "published": true,
+  "isFeatured": false,
+  "isNew": true,
+  "images": [
+    "/images/products/L6/1.jpg",
+    "/images/products/L6/slider_1.jpg",
+    "/images/products/L6/slider_2.jpg",
+    "/images/products/L6/slider_3.jpg"
+  ],
+  "detailImages": [
+    "/images/products/L6/detail_1.jpg",
+    "/images/products/L6/detail_2.jpg"
+  ],
+  "video": null,
+  "features": [
+    {
+      "icon": "monitor",
+      "title": "可视对讲",
+      "description": "远程视频对讲，随时查看门外情况。"
+    },
+    {
+      "icon": "fingerprint",
+      "title": "指纹识别",
+      "description": "半导体指纹识别，0.5 秒快速开锁。"
+    },
+    {
+      "icon": "lock",
+      "title": "多种开锁方式",
+      "description": "支持指纹、密码、IC 卡、钥匙等多种开锁方式。"
+    },
+    {
+      "icon": "wifi",
+      "title": "智能连接",
+      "description": "支持 WiFi 连接，手机 APP 远程控制。"
+    },
+    {
+      "icon": "battery",
+      "title": "长续航",
+      "description": "大容量锂电池，续航 6-12 个月。"
+    }
+  ],
+  "specifications": [
+    {
+      "category": "安全性能",
+      "specs": [
+        {
+          "name": "锁芯等级",
+          "value": "C 级锁芯"
+        },
+        {
+          "name": "指纹容量",
+          "value": "100 枚"
+        },
+        {
+          "name": "密码容量",
+          "value": "100 组"
+        },
+        {
+          "name": "IC 卡容量",
+          "value": "100 张"
+        }
+      ]
+    },
+    {
+      "category": "电源续航",
+      "specs": [
+        {
+          "name": "电池类型",
+          "value": "锂电池"
+        },
+        {
+          "name": "续航时间",
+          "value": "6-12 个月"
+        },
+        {
+          "name": "应急供电",
+          "value": "Type-C"
+        }
+      ]
+    },
+    {
+      "category": "物理规格",
+      "specs": [
+        {
+          "name": "面板材质",
+          "value": "铝合金/CNC 精雕"
+        },
+        {
+          "name": "表面处理",
+          "value": "磨砂黑/拉丝银"
+        },
+        {
+          "name": "适用门厚",
+          "value": "40-120mm"
+        }
+      ]
+    }
+  ]
+}

@@ -11,15 +11,26 @@ import type { Product } from "@/types/product";
  */
 
 // 产品目录列表 (按此顺序展示)
-const PRODUCT_SLUGS = ["A20", "A30", "A40", "Mate10", "Mate20"] as const;
+const PRODUCT_SLUGS = ["A20", "A30", "A40", "L1", "L2", "L3", "L4", "L5", "L6", "L7", "L9", "T3", "V70", "X1", "mate10", "mate20"] as const;
 
 // 预导入所有产品配置 (Next.js 需要静态路径)
 const productConfigs: Record<string, ProductConfig> = {
   A20: require("../../public/images/products/A20/product.json"),
   A30: require("../../public/images/products/A30/product.json"),
   A40: require("../../public/images/products/A40/product.json"),
-  Mate10: require("../../public/images/products/Mate10/product.json"),
-  Mate20: require("../../public/images/products/Mate20/product.json"),
+  L1: require("../../public/images/products/L1/product.json"),
+  L2: require("../../public/images/products/L2/product.json"),
+  L3: require("../../public/images/products/L3/product.json"),
+  L4: require("../../public/images/products/L4/product.json"),
+  L5: require("../../public/images/products/L5/product.json"),
+  L6: require("../../public/images/products/L6/product.json"),
+  L7: require("../../public/images/products/L7/product.json"),
+  L9: require("../../public/images/products/L9/product.json"),
+  T3: require("../../public/images/products/T3/product.json"),
+  V70: require("../../public/images/products/V70/product.json"),
+  X1: require("../../public/images/products/X1/product.json"),
+  mate10: require("../../public/images/products/mate10/product.json"),
+  mate20: require("../../public/images/products/mate20/product.json"),
 };
 
 /**
